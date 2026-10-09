@@ -1,0 +1,1749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitX - Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<nav>
+    <h2 class="logo">
+        Fit<span>X</span>
+    </h2>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="workouts.html">Workouts</a>
+        <a href="diet-plans.html">Diet Plans</a>
+        <a href="membership.html">Membership</a>
+    </div>
+
+    <button class="login-btn" id="logoutBtn">Logout</button>
+</nav>
+
+
+<section class="dashboard-section">
+
+    <div class="dashboard-box">
+
+        <p class="small-title">WELCOME TO FITX</p>
+
+        <h1>Welcome Back, <span id="userName">User</span>! 💪</h1>
+
+        <p class="dashboard-subtitle">
+            Your fitness journey starts here.
+        </p>
+        <div class="profile-card">
+            <h2>My Profile</h2>
+            <div class="profile-photo-section">
+
+                <img
+                        id="profilePhoto"
+                        src=""
+                        alt="Profile Photo"
+                >
+
+                <input
+                        type="file"
+                        id="profilePhotoInput"
+                        accept="image/*"
+                        onchange="changeProfilePhoto()"
+                >
+
+            </div>
+
+            <p><strong>Name:</strong> <span id="profileName">User</span></p>
+
+            <p><strong>Email:</strong> <span id="profileEmail">Email</span></p>
+
+            <button class="change-btn" onclick="showProfileEditor()">
+                Edit Profile
+            </button>
+            <div id="profileEditor" style="display: none; margin-top: 15px;">
+
+                <input
+                        type="text"
+                        id="profileNameInput"
+                        placeholder="Enter your name"
+                >
+
+                <input
+                        type="email"
+                        id="profileEmailInput"
+                        placeholder="Enter your email"
+                >
+
+                <button onclick="saveProfile()">
+                    Save Profile
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="progress-section">
+
+            <h2>My Fitness Progress</h2>
+
+            <!-- ROW 1: Age, Weight, Goal, Membership -->
+            <div class="top-progress-grid">
+
+                <!-- Age -->
+                <div class="progress-card">
+
+                    <h3>🎂 Age</h3>
+
+                    <p id="ageDisplay">26</p>
+
+                    <span>Current Age</span>
+
+                    <button class="change-btn" onclick="showAgeEditor()">
+                        Change Age
+                    </button>
+
+                    <div id="ageEditor" style="display: none; margin-top: 15px;">
+
+                        <input
+                                type="number"
+                                id="ageInput"
+                                placeholder="Enter age"
+                        >
+
+                        <button onclick="saveAge()">
+                            Save Age
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Weight -->
+                <div class="progress-card">
+
+                    <h3>⚖️ Weight</h3>
+
+                    <p id="weightDisplay">75 kg</p>
+
+                    <span>Current Weight</span>
+
+                    <button class="change-btn" onclick="showWeightEditor()">
+                        Change Weight
+                    </button>
+
+                    <div id="weightEditor" style="display: none; margin-top: 15px;">
+
+                        <input
+                                type="number"
+                                id="weightInput"
+                                placeholder="Enter weight"
+                        >
+
+                        <button onclick="saveWeight()">
+                            Save Weight
+                        </button>
+
+                    </div>
+
+                    <hr class="target-divider">
+
+                    <p id="targetWeightDisplay">65 kg</p>
+
+                    <span>Target Weight</span>
+
+                    <button class="change-btn" onclick="showTargetWeightEditor()">
+                        Change Target
+                    </button>
+
+                    <div id="targetWeightEditor" style="display: none; margin-top: 15px;">
+
+                        <input
+                                type="number"
+                                id="targetWeightInput"
+                                placeholder="Enter target weight"
+                        >
+
+                        <button onclick="saveTargetWeight()">
+                            Save Target
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Goal -->
+                <div class="progress-card">
+
+                    <h3>🎯 Goal</h3>
+
+                    <p id="goalDisplay">Muscle Gain</p>
+
+                    <span>Fitness Goal</span>
+
+                    <button class="change-btn" onclick="showGoalEditor()">
+                        Change Goal
+                    </button>
+
+                    <div id="goalEditor" style="display: none; margin-top: 15px;">
+
+                        <select id="goalInput">
+
+                            <option value="">Select Goal</option>
+
+                            <option value="Muscle Gain">
+                                Muscle Gain
+                            </option>
+
+                            <option value="Weight Loss">
+                                Weight Loss
+                            </option>
+
+                            <option value="Strength">
+                                Strength
+                            </option>
+
+                            <option value="General Fitness">
+                                General Fitness
+                            </option>
+
+                        </select>
+
+                        <button onclick="saveGoal()">
+                            Save Goal
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Membership -->
+                <div class="dashboard-card membership-card">
+
+                    <h3>💳 Membership</h3>
+
+                    <p>
+                        Current Plan:
+                        <strong id="currentMembership">Not Selected</strong>
+                    </p>
+
+                    <span id="membershipDisplay" style="display: none;">
+                            Not Selected
+                       </span>
+
+                    <p>
+                        <strong>Duration:</strong>
+                        <span id="membershipDurationDisplay">
+                            --
+                       </span>
+                    </p>
+
+                    <p>
+                        <strong>Status:</strong>
+                        <span id="membershipCardStatus">
+                             Not Active
+                        </span>
+                    </p>
+
+                    <p>
+                        <strong>Days Remaining:</strong>
+                        <span id="membershipDaysRemaining">
+                                 --
+                        </span>
+                    </p>
+
+
+                    <div style="margin-top: 15px;">
+
+
+
+
+
+                    </div>
+
+                    <div id="membershipPlans" style="display: none; margin-top: 20px;">
+
+                        <button class="plan-option" onclick="changeMembership('Basic')">
+                            Basic - ₹999/month
+                        </button>
+
+                        <button class="plan-option" onclick="changeMembership('Pro')">
+                            Pro - ₹1,999/month
+                        </button>
+
+                        <button class="plan-option" onclick="changeMembership('Elite')">
+                            Elite - ₹2,999/month
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ROW 2: Weight Progress, Workouts, Diet Plans -->
+            <div class="bottom-progress-grid">
+
+                <!-- Weight Progress -->
+                <div class="progress-card">
+
+                    <h3>📊 Weight Progress</h3>
+
+                    <p id="weightProgressDisplay">--</p>
+
+                    <span id="weightProgressText">
+                Set your current and target weight
+            </span>
+
+                    <div class="weight-progress-bar">
+
+                        <div
+                                id="weightProgressFill"
+                                class="weight-progress-fill">
+                        </div>
+
+                    </div>
+
+                    <p id="weightProgressPercent">0%</p>
+
+                </div>
+
+
+                <!-- Workouts -->
+                <div class="dashboard-card">
+
+                    <h3>🏋️ Workouts</h3>
+
+                    <p>
+                        90-Day Progress:
+                        <strong id="dashboard90Workout">0 / 52</strong>
+                    </p>
+
+                    <div class="workout-progress-bar">
+
+                        <div
+                                id="workoutProgressFill"
+                                class="workout-progress-fill">
+                        </div>
+
+                    </div>
+
+                    <p id="workoutProgressPercent">0%</p>
+
+                    <p>
+                        This Week:
+                        <strong id="dashboardWeeklyWorkout">0 / 4</strong>
+                    </p>
+
+                    <a href="workouts.html">View Workouts</a>
+
+                </div>
+
+
+                <!-- Diet Plans -->
+                <div class="dashboard-card">
+
+                    <h3>🥗 Diet Plans</h3>
+
+                    <p>
+                        Today's Water:
+                        <strong id="dashboardWater">0 / 8</strong>
+                    </p>
+
+                    <div class="water-progress-bar">
+
+                        <div
+                                id="waterProgressFill"
+                                class="water-progress-fill">
+                        </div>
+
+                    </div>
+
+                    <p id="waterProgressPercent">0%</p>
+
+                    <p>
+                        Today's Calories:
+                        <strong id="dashboardCalories">0</strong>
+                    </p>
+
+                    <p>
+                        Today's Protein:
+                        <strong id="dashboardProtein">0 g</strong>
+                    </p>
+
+                    <p>
+                        📊 Diet Progress:
+                        <strong id="dashboardDietDays">0 / 30 Days</strong>
+                    </p>
+
+                    <a href="diet-plans.html">View Diet Plans</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+            <div class="bmi-section">
+
+                <h2>BMI Calculator</h2>
+
+                <div class="bmi-card">
+
+                    <h3>⚖️ Your BMI</h3>
+
+                    <p id="bmiDisplay">--</p>
+
+                    <span id="bmiStatus">Enter your details to calculate BMI</span>
+
+                    <button class="change-btn" onclick="calculateBMI()">
+                        Calculate BMI
+                    </button>
+
+                </div>
+
+            </div>
+            <div class="summary-section">
+
+                <h2>Fitness Summary</h2>
+
+                <div class="summary-cards">
+
+                    <div class="summary-card">
+                        <h3>🔥 Daily Calories</h3>
+
+                        <p id="caloriesDisplay">2000 kcal</p>
+
+                        <span>Daily Target</span>
+
+                        <button class="change-btn" onclick="showCaloriesEditor()">
+                            Change Calories
+                        </button>
+
+                        <div id="caloriesEditor" style="display: none; margin-top: 15px;">
+
+                            <input
+                                    type="number"
+                                    id="caloriesInput"
+                                    placeholder="Enter calories"
+                            >
+
+                            <button onclick="saveCalories()">
+                                Save Calories
+                            </button>
+
+                        </div>
+                    </div>
+
+                    <div class="summary-card">
+                        <h3>🏋️ Weekly Workouts</h3>
+
+                        <p id="workoutsDisplay">4 Days</p>
+
+                        <span>Weekly Target</span>
+
+                        <button class="change-btn" onclick="showWorkoutsEditor()">
+                            Change Workouts
+                        </button>
+
+                        <div id="workoutsEditor" style="display: none; margin-top: 15px;">
+
+                            <input
+                                    type="number"
+                                    id="workoutsInput"
+                                    placeholder="Enter workout days"
+                            >
+
+                            <button onclick="saveWorkouts()">
+                                Save Workouts
+                            </button>
+
+                        </div>
+                    </div>
+
+
+                    <div class="summary-card">
+                        <h3>💧 Water Intake</h3>
+
+                        <p id="waterDisplay">3 L</p>
+
+                        <span>Daily Target</span>
+
+                        <button class="change-btn" onclick="showWaterEditor()">
+                            Change Water
+                        </button>
+
+                        <div id="waterEditor" style="display: none; margin-top: 15px;">
+
+                            <input
+                                    type="number"
+                                    id="waterInput"
+                                    placeholder="Enter water intake"
+                                    step="0.1"
+                            >
+
+                            <button onclick="saveWater()">
+                                Save Water
+                            </button>
+
+                        </div>
+                    </div>
+
+
+                    <div class="summary-card">
+                        <h3>📈 Progress</h3>
+
+                        <p id="progressDisplay">75%</p>
+
+                        <span>Overall Progress</span>
+
+                        <button class="change-btn" onclick="showProgressEditor()">
+                            Change Progress
+                        </button>
+
+                        <div id="progressEditor" style="display: none; margin-top: 15px;">
+
+                            <input
+                                    type="number"
+                                    id="progressInput"
+                                    placeholder="Enter progress %"
+                                    min="0"
+                                    max="100"
+                            >
+
+                            <button onclick="saveProgress()">
+                                Save Progress
+                            </button>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+</section>
+<div class="membership-details">
+
+    <h2>Membership Details</h2>
+
+    <p>
+        <strong>Plan:</strong>
+        <span id="membershipPlan">Not Selected</span>
+    </p>
+
+    <p>
+        <strong>Package Price:</strong>
+        <span id="membershipPrice">--</span>
+    </p>
+
+    <p>
+        <strong>Duration:</strong>
+        <span id="membershipDuration">--</span>
+    </p>
+
+    <p>
+        <strong>Start Date:</strong>
+        <span id="membershipStartDate">--</span>
+    </p>
+
+    <p>
+        <strong>Expiry Date:</strong>
+        <span id="membershipExpiryDate">--</span>
+    </p>
+
+    <p>
+        <strong>Days Remaining:</strong>
+        <span id="membershipDays">--</span>
+    </p>
+
+    <p>
+        <strong>Status:</strong>
+        <span id="membershipStatus">Not Active</span>
+    </p>
+
+</div>
+
+<footer>
+
+    <h2>Fit<span>X</span></h2>
+
+    <p>
+        Train Hard. Stay Strong. Live Better.
+    </p>
+
+    <p class="copyright">
+        ©️ 2026 FitX. All Rights Reserved.
+    </p>
+
+</footer>
+
+<script>
+    document.getElementById("logoutBtn").addEventListener("click", function() {
+        alert("You have been logged out.");
+        window.location.href = "login.html";
+    });
+</script>
+<script>
+    const userName = localStorage.getItem("fitxName");
+
+    if (userName) {
+        document.getElementById("userName").textContent = userName;
+    }
+</script>
+<script>
+    const profileName = localStorage.getItem("fitxName");
+    const profileEmail = localStorage.getItem("fitxEmail");
+
+    if (profileName) {
+        document.getElementById("profileName").textContent = profileName;
+    }
+
+    if (profileEmail) {
+        document.getElementById("profileEmail").textContent = profileEmail;
+    }
+</script>
+</body>
+<script>
+
+    // Login protection
+    if (localStorage.getItem("fitxLoggedIn") !== "true") {
+        alert("🔐 Please login or create an account to access your FitX Dashboard.");
+        window.location.href = "login.html";
+    }
+
+    function showWeightEditor() {
+        document.getElementById("weightEditor").style.display = "block";
+    }
+    function saveWeight() {
+        const weight = document.getElementById("weightInput").value;
+
+        if (weight === "") {
+            alert("Please enter your weight.");
+            return;
+        }
+
+        localStorage.setItem("fitxWeight", weight);
+        document.getElementById("weightDisplay").textContent = weight + " kg";
+
+        updateWeightProgress();
+
+        alert("Weight saved successfully!");
+    }
+
+    const savedWeight = localStorage.getItem("fitxWeight");
+
+    if (savedWeight) {
+        document.getElementById("weightDisplay").textContent = savedWeight + " kg";
+    }
+    function showGoalEditor() {
+        document.getElementById("goalEditor").style.display = "block";
+    }
+    function saveGoal() {
+        const goal = document.getElementById("goalInput").value;
+
+        if (goal === "") {
+            alert("Please select your fitness goal.");
+            return;
+        }
+
+        localStorage.setItem("fitxGoal", goal);
+
+        document.getElementById("goalDisplay").textContent = goal;
+        updateGoalRecommendation();
+
+        alert("Fitness goal saved successfully!");
+    }
+    function showTargetWeightEditor() {
+        document.getElementById("targetWeightEditor").style.display = "block";
+    }
+
+    function saveTargetWeight() {
+        const targetWeight = document.getElementById("targetWeightInput").value;
+
+        if (targetWeight === "") {
+            alert("Please enter your target weight.");
+            return;
+        }
+
+        localStorage.setItem("fitxTargetWeight", targetWeight);
+        document.getElementById("targetWeightDisplay").textContent = targetWeight + " kg";
+
+        updateWeightProgress();
+
+        alert("Target weight saved successfully!");
+    }
+
+    const savedTargetWeight = localStorage.getItem("fitxTargetWeight");
+
+    if (savedTargetWeight) {
+        document.getElementById("targetWeightDisplay").textContent =
+            savedTargetWeight + " kg";
+
+        document.getElementById("targetWeightInput").value =
+            savedTargetWeight;
+    }
+    function showAgeEditor() {
+        document.getElementById("ageEditor").style.display = "block";
+    }
+    function saveAge() {
+        const age = document.getElementById("ageInput").value;
+
+        if (age === "") {
+            alert("Please enter your age.");
+            return;
+        }
+
+        localStorage.setItem("fitxAge", age);
+
+        document.getElementById("ageDisplay").textContent = age;
+
+        alert("Age saved successfully!");
+    }
+    const savedAge = localStorage.getItem("fitxAge");
+
+    if (savedAge) {
+        document.getElementById("ageDisplay").textContent = savedAge;
+        document.getElementById("ageInput").value = savedAge;
+    }
+    const savedGoal = localStorage.getItem("fitxGoal");
+
+    if (savedGoal) {
+        document.getElementById("goalDisplay").textContent = savedGoal;
+        document.getElementById("goalInput").value = savedGoal;
+    }
+    // Weekly Workouts
+    function showWorkoutsEditor() {
+        document.getElementById("workoutsEditor").style.display = "block";
+    }
+
+    function saveWorkouts() {
+        const workouts = document.getElementById("workoutsInput").value;
+
+        if (workouts === "") {
+            alert("Please enter your weekly workout days.");
+            return;
+        }
+
+        localStorage.setItem("fitxWorkouts", workouts);
+
+        document.getElementById("workoutsDisplay").textContent =
+            workouts + " Days";
+
+        alert("Weekly workouts saved successfully!");
+    }
+
+    const savedWorkouts = localStorage.getItem("fitxWorkouts");
+
+    if (savedWorkouts) {
+        document.getElementById("workoutsDisplay").textContent =
+            savedWorkouts + " Days";
+
+        document.getElementById("workoutsInput").value = savedWorkouts;
+    }
+
+
+    // Water Intake
+    function showWaterEditor() {
+        document.getElementById("waterEditor").style.display = "block";
+    }
+
+    function saveWater() {
+        const water = document.getElementById("waterInput").value;
+
+        if (water === "") {
+            alert("Please enter your daily water intake.");
+            return;
+        }
+
+        localStorage.setItem("fitxWater", water);
+
+        document.getElementById("waterDisplay").textContent =
+            water + " L";
+
+        alert("Water intake saved successfully!");
+    }
+
+    const savedWater = localStorage.getItem("fitxWater");
+
+    if (savedWater) {
+        document.getElementById("waterDisplay").textContent =
+            savedWater + " L";
+
+        document.getElementById("waterInput").value = savedWater;
+    }
+
+
+    // Progress
+    function showProgressEditor() {
+        document.getElementById("progressEditor").style.display = "block";
+    }
+
+    function saveProgress() {
+        const progress = document.getElementById("progressInput").value;
+
+        if (progress === "") {
+            alert("Please enter your progress percentage.");
+            return;
+        }
+
+        localStorage.setItem("fitxProgress", progress);
+
+        document.getElementById("progressDisplay").textContent =
+            progress + "%";
+
+        alert("Progress saved successfully!");
+    }
+
+    const savedProgress = localStorage.getItem("fitxProgress");
+
+    if (savedProgress) {
+        document.getElementById("progressDisplay").textContent =
+            savedProgress + "%";
+
+        document.getElementById("progressInput").value = savedProgress;
+    }
+    function showCaloriesEditor() {
+        document.getElementById("caloriesEditor").style.display = "block";
+    }
+    function saveCalories() {
+        const calories = document.getElementById("caloriesInput").value;
+
+        if (calories === "") {
+            alert("Please enter your daily calories.");
+            return;
+        }
+
+        localStorage.setItem("fitxCalories", calories);
+
+        document.getElementById("caloriesDisplay").textContent = calories + " kcal";
+
+        alert("Daily calories saved successfully!");
+    }
+    const savedCalories = localStorage.getItem("fitxCalories");
+
+    if (savedCalories) {
+        document.getElementById("caloriesDisplay").textContent = savedCalories + " kcal";
+        document.getElementById("caloriesInput").value = savedCalories;
+    }
+
+    function showProfileEditor() {
+        document.getElementById("profileEditor").style.display = "block";
+
+        document.getElementById("profileNameInput").value =
+            localStorage.getItem("fitxName") || "";
+
+        document.getElementById("profileEmailInput").value =
+            localStorage.getItem("fitxEmail") || "";
+    }
+
+    function saveProfile() {
+
+        const name = document.getElementById("profileNameInput").value;
+        const email = document.getElementById("profileEmailInput").value;
+
+        if (name === "" || email === "") {
+            alert("Please enter your name and email.");
+            return;
+        }
+
+        localStorage.setItem("fitxName", name);
+        localStorage.setItem("fitxEmail", email);
+
+        document.getElementById("userName").textContent = name;
+        document.getElementById("profileName").textContent = name;
+        document.getElementById("profileEmail").textContent = email;
+
+        alert("Profile updated successfully!");
+    }
+    function calculateBMI() {
+
+        const weight = parseFloat(
+            localStorage.getItem("fitxWeight")
+        );
+
+        const height = 5.5; // Height in feet
+
+        if (!weight) {
+            alert("Please enter your weight first.");
+            return;
+        }
+
+        // Convert feet to meters
+        const heightInMeters = height * 0.3048;
+
+        // BMI formula
+        const bmi = weight / (heightInMeters * heightInMeters);
+
+        document.getElementById("bmiDisplay").textContent =
+            bmi.toFixed(1);
+
+        let status = "";
+
+        if (bmi < 18.5) {
+            status = "Underweight";
+        } else if (bmi < 25) {
+            status = "Normal Weight";
+        } else if (bmi < 30) {
+            status = "Overweight";
+        } else {
+            status = "Obese";
+        }
+
+        document.getElementById("bmiStatus").textContent = status;
+    }
+    function calculateBMI() {
+
+        const weight = parseFloat(localStorage.getItem("fitxWeight"));
+
+        if (!weight) {
+            alert("Please enter your weight first.");
+            return;
+        }
+
+        const heightInMeters = 5.5 * 0.3048;
+
+        const bmi = weight / (heightInMeters * heightInMeters);
+
+        document.getElementById("bmiDisplay").textContent =
+            bmi.toFixed(1);
+
+        let status = "";
+
+        if (bmi < 18.5) {
+            status = "Underweight";
+        } else if (bmi < 25) {
+            status = "Normal Weight";
+        } else if (bmi < 30) {
+            status = "Overweight";
+        } else {
+            status = "Obese";
+        }
+
+        document.getElementById("bmiStatus").textContent = status;
+    }
+    function changeProfilePhoto() {
+
+        const fileInput = document.getElementById("profilePhotoInput");
+        const profilePhoto = document.getElementById("profilePhoto");
+
+        const file = fileInput.files[0];
+
+        if (!file) {
+            return;
+        }
+
+        const reader = new FileReader();
+
+        reader.onload = function(event) {
+
+            profilePhoto.src = event.target.result;
+
+            localStorage.setItem(
+                "fitxProfilePhoto",
+                event.target.result
+            );
+        };
+
+        reader.readAsDataURL(file);
+    }
+
+
+    const savedProfilePhoto =
+        localStorage.getItem("fitxProfilePhoto");
+
+    if (savedProfilePhoto) {
+
+        document.getElementById("profilePhoto").src =
+            savedProfilePhoto;
+    }
+
+    /* ==============================
+    MEMBERSHIP SYSTEM
+ ============================== */
+
+    function getMembershipPrice(plan) {
+
+        if (plan === "Basic") {
+            return 999;
+        }
+
+        if (plan === "Pro") {
+            return 1999;
+        }
+
+        if (plan === "Elite") {
+            return 2999;
+        }
+
+        return 0;
+    }
+
+
+    function updateMembershipDisplay() {
+
+        const plan =
+            localStorage.getItem("fitxMembership");
+
+        const price =
+            parseInt(
+                localStorage.getItem("fitxMembershipPrice")
+            ) || getMembershipPrice(plan);
+
+        let duration =
+            localStorage.getItem("fitxMembershipDuration");
+
+        if (!duration) {
+            duration = "1 Month";
+
+            localStorage.setItem(
+                "fitxMembershipDuration",
+                duration
+            );
+        }
+
+
+        /* Dashboard Membership Card */
+
+        const currentMembership =
+            document.getElementById("currentMembership");
+
+        const membershipDisplay =
+            document.getElementById("membershipDisplay");
+
+        const membershipDurationDisplay =
+            document.getElementById("membershipDurationDisplay");
+
+
+        if (plan) {
+
+            if (currentMembership) {
+                currentMembership.textContent = plan;
+            }
+
+            if (membershipDisplay) {
+                membershipDisplay.textContent = plan;
+            }
+
+            if (membershipDurationDisplay) {
+                membershipDurationDisplay.textContent =
+                    duration;
+            }
+        }
+
+
+        /* Membership Details */
+
+        const membershipPlan =
+            document.getElementById("membershipPlan");
+
+        const membershipPrice =
+            document.getElementById("membershipPrice");
+
+        const membershipDuration =
+            document.getElementById("membershipDuration");
+
+        const membershipStatus =
+            document.getElementById("membershipStatus");
+
+
+        if (plan) {
+
+            membershipPlan.textContent =
+                plan;
+
+            membershipPrice.textContent =
+                "₹" + price.toLocaleString("en-IN") + " / month";
+
+            membershipDuration.textContent =
+                duration;
+
+            membershipStatus.textContent =
+                "Active";
+
+        } else {
+
+            membershipPlan.textContent =
+                "Not Selected";
+
+            membershipPrice.textContent =
+                "--";
+
+            membershipDuration.textContent =
+                "--";
+
+            membershipStatus.textContent =
+                "Not Active";
+        }
+    }
+
+
+    function showMembershipPlans() {
+
+        const plans =
+            document.getElementById("membershipPlans");
+
+        if (plans.style.display === "none") {
+
+            plans.style.display = "block";
+
+        } else {
+
+            plans.style.display = "none";
+        }
+    }
+
+
+    function changeMembership(plan) {
+
+        const price =
+            getMembershipPrice(plan);
+
+        localStorage.setItem(
+            "fitxMembership",
+            plan
+        );
+
+        localStorage.setItem(
+            "fitxMembershipPrice",
+            price
+        );
+
+        document.getElementById(
+            "membershipPlans"
+        ).style.display = "none";
+
+        updateMembershipDisplay();
+
+        alert(
+            plan +
+            " Membership selected successfully! 🎉"
+        );
+    }
+
+
+    function changeMembershipDuration() {
+
+        const duration =
+            document.getElementById(
+                "membershipDurationInput"
+            ).value;
+
+        localStorage.setItem(
+            "fitxMembershipDuration",
+            duration
+        );
+
+        updateMembershipDisplay();
+
+        alert(
+            "Membership duration changed to " +
+            duration + "!"
+        );
+    }
+
+
+    updateMembershipDisplay();
+
+    function updateDashboardWorkoutProgress() {
+
+        const total =
+            parseInt(localStorage.getItem("fitxWorkout90Count")) || 0;
+
+        const weekly =
+            parseInt(localStorage.getItem("fitxWorkoutWeeklyCount")) || 0;
+
+        const weeklyTarget =
+            parseInt(localStorage.getItem("fitxWorkoutTarget")) || 4;
+
+        const target90 =
+            Math.round(weeklyTarget * 90 / 7);
+
+        document.getElementById("dashboard90Workout").textContent =
+            total + " / " + target90;
+
+        document.getElementById("dashboardWeeklyWorkout").textContent =
+            weekly + " / " + weeklyTarget;
+
+        const progressFill =
+            document.getElementById("workoutProgressFill");
+
+        const progressPercent =
+            document.getElementById("workoutProgressPercent");
+
+        let percentage =
+            (total / target90) * 100;
+
+        percentage =
+            Math.max(0, Math.min(100, percentage));
+
+        progressFill.style.width =
+            percentage.toFixed(0) + "%";
+
+        progressPercent.textContent =
+            percentage.toFixed(0) + "%";
+    }
+
+    updateDashboardWorkoutProgress();
+    function updateGoalRecommendation() {
+
+        const goal = localStorage.getItem("fitxGoal");
+
+        const recommendation =
+            document.getElementById("goalRecommendation");
+
+        if (!recommendation) return;
+
+        if (goal === "Weight Loss") {
+
+            recommendation.textContent =
+                "Focus on cardio and HIIT workouts, maintain a calorie-controlled diet, and stay consistent with your workouts.";
+
+        } else if (goal === "Muscle Gain") {
+
+            recommendation.textContent =
+                "Focus on strength training, progressive overload, and a protein-rich diet to support muscle growth.";
+
+        } else if (goal === "Strength") {
+
+            recommendation.textContent =
+                "Focus on strength training with compound exercises and gradually increase your training intensity.";
+
+        } else {
+
+            recommendation.textContent =
+                "Maintain a balanced workout routine with strength training, cardio, proper nutrition, and good recovery.";
+        }
+    }
+
+    updateGoalRecommendation();
+    function updateDashboardDietProgress() {
+
+        const water =
+            parseInt(localStorage.getItem("fitxWaterCount")) || 0;
+
+        const calories =
+            parseInt(localStorage.getItem("fitxCalorieCount")) || 0;
+
+        const protein =
+            parseInt(localStorage.getItem("fitxProteinCount")) || 0;
+
+        const dietHistory =
+            JSON.parse(localStorage.getItem("fitxDietHistory")) || [];
+
+        /* Water */
+        document.getElementById("dashboardWater").textContent =
+            water + " / 8";
+
+        const waterProgressFill =
+            document.getElementById("waterProgressFill");
+
+        const waterProgressPercent =
+            document.getElementById("waterProgressPercent");
+
+        let waterPercentage =
+            (water / 8) * 100;
+
+        waterPercentage =
+            Math.max(0, Math.min(100, waterPercentage));
+
+        waterProgressFill.style.width =
+            waterPercentage.toFixed(0) + "%";
+
+        waterProgressPercent.textContent =
+            waterPercentage.toFixed(0) + "%";
+
+
+        /* Calories */
+        document.getElementById("dashboardCalories").textContent =
+            calories;
+
+
+        /* Protein */
+        document.getElementById("dashboardProtein").textContent =
+            protein + " g";
+
+
+        /* 30-Day Diet Progress */
+        let completedDays = 0;
+
+        dietHistory.forEach(function(item) {
+
+            const waterCompleted =
+                item.water >= item.waterTarget;
+
+            const calorieCompleted =
+                item.calorieTarget > 0 &&
+                item.calories >= item.calorieTarget;
+
+            const proteinCompleted =
+                item.proteinTarget > 0 &&
+                item.protein >= item.proteinTarget;
+
+            if (
+                waterCompleted &&
+                calorieCompleted &&
+                proteinCompleted
+            ) {
+                completedDays++;
+            }
+        });
+
+        const dashboardDietDays =
+            document.getElementById("dashboardDietDays");
+
+        if (dashboardDietDays) {
+            dashboardDietDays.textContent =
+                completedDays + " / 30 Days";
+        }
+    }
+
+    updateDashboardDietProgress();
+    function updateWeightProgress() {
+
+        const currentWeight =
+            parseFloat(localStorage.getItem("fitxWeight"));
+
+        const targetWeight =
+            parseFloat(localStorage.getItem("fitxTargetWeight"));
+
+        const progressDisplay =
+            document.getElementById("weightProgressDisplay");
+
+        const progressText =
+            document.getElementById("weightProgressText");
+
+        const progressFill =
+            document.getElementById("weightProgressFill");
+
+        const progressPercent =
+            document.getElementById("weightProgressPercent");
+
+
+        if (!currentWeight || !targetWeight) {
+
+            progressDisplay.textContent = "--";
+
+            progressText.textContent =
+                "Set your current and target weight";
+
+            progressFill.style.width = "0%";
+
+            progressPercent.textContent = "0%";
+
+            return;
+        }
+
+
+        if (currentWeight === targetWeight) {
+
+            progressDisplay.textContent =
+                "🎉 Goal Reached!";
+
+            progressText.textContent =
+                "You reached your target weight!";
+
+            progressFill.style.width = "100%";
+
+            progressPercent.textContent = "100%";
+
+            return;
+        }
+
+
+        const difference =
+            Math.abs(currentWeight - targetWeight);
+
+        let percentage;
+
+
+        if (currentWeight > targetWeight) {
+
+            percentage =
+                ((currentWeight - targetWeight) / currentWeight) * 100;
+
+            progressText.textContent =
+                difference.toFixed(1) +
+                " kg remaining to reach your target";
+
+        } else {
+
+            percentage =
+                ((targetWeight - currentWeight) / targetWeight) * 100;
+
+            progressText.textContent =
+                difference.toFixed(1) +
+                " kg above your target";
+        }
+
+
+        percentage =
+            Math.max(0, Math.min(100, percentage));
+
+
+        progressDisplay.textContent =
+            difference.toFixed(1) + " kg";
+
+        progressFill.style.width =
+            percentage.toFixed(0) + "%";
+
+        progressPercent.textContent =
+            percentage.toFixed(0) + "%";
+    }
+
+
+    updateWeightProgress();
+
+    /* =================================
+   FITX MEMBERSHIP SYSTEM
+================================ */
+
+    function getMembershipPrice(plan, duration) {
+
+        const prices = {
+
+            Basic: {
+                1: 999,
+                3: 1999,
+                6: 3999
+            },
+
+            Pro: {
+                1: 1999,
+                3: 2999,
+                6: 4999
+            },
+
+            Elite: {
+                1: 2999,
+                3: 3999,
+                6: 5999
+            }
+
+        };
+
+        if (prices[plan] && prices[plan][duration]) {
+            return prices[plan][duration];
+        }
+
+        return 0;
+    }
+
+
+    function formatMembershipDate(dateString) {
+
+        if (!dateString) {
+            return "--";
+        }
+
+        return new Date(dateString).toLocaleDateString(
+            "en-IN",
+            {
+                day: "2-digit",
+                month: "short",
+                year: "numeric"
+            }
+        );
+    }
+
+
+    function updateMembershipSystem() {
+
+        const plan =
+            localStorage.getItem("fitxMembership");
+
+        const duration =
+            parseInt(
+                localStorage.getItem("fitxMembershipDuration")
+            ) || 0;
+
+        const savedPrice =
+            parseInt(
+                localStorage.getItem("fitxMembershipPrice")
+            ) || 0;
+
+        const price =
+            savedPrice ||
+            getMembershipPrice(plan, duration);
+
+
+        const durationText =
+            duration > 0
+                ? duration + " Month" +
+                (duration > 1 ? "s" : "")
+                : "--";
+
+
+        let status =
+            localStorage.getItem("fitxMembershipStatus")
+            || "Not Active";
+
+
+        const startDate =
+            localStorage.getItem("fitxMembershipStartDate");
+
+        const expiryDate =
+            localStorage.getItem("fitxMembershipExpiryDate");
+
+
+        /* Days Remaining */
+
+        let daysRemaining = "--";
+
+        if (expiryDate) {
+
+            const today = new Date();
+            const expiry = new Date(expiryDate);
+
+            today.setHours(0, 0, 0, 0);
+            expiry.setHours(0, 0, 0, 0);
+
+            const difference = expiry - today;
+
+            daysRemaining =
+                Math.ceil(
+                    difference /
+                    (1000 * 60 * 60 * 24)
+                );
+
+            if (daysRemaining < 0) {
+
+                daysRemaining = 0;
+                status = "Expired";
+
+                localStorage.setItem(
+                    "fitxMembershipStatus",
+                    "Expired"
+                );
+
+            } else {
+
+                status = "Active";
+
+                localStorage.setItem(
+                    "fitxMembershipStatus",
+                    "Active"
+                );
+            }
+        }
+
+
+        /* Dashboard Membership Card */
+
+        const currentMembership =
+            document.getElementById("currentMembership");
+
+        if (currentMembership) {
+            currentMembership.textContent =
+                plan || "Not Selected";
+        }
+
+
+        const membershipDisplay =
+            document.getElementById("membershipDisplay");
+
+        if (membershipDisplay) {
+            membershipDisplay.textContent =
+                plan || "Not Selected";
+        }
+
+
+        const membershipDurationDisplay =
+            document.getElementById(
+                "membershipDurationDisplay"
+            );
+
+        if (membershipDurationDisplay) {
+            membershipDurationDisplay.textContent =
+                durationText;
+        }
+
+
+        const membershipCardStatus =
+            document.getElementById(
+                "membershipCardStatus"
+            );
+
+        if (membershipCardStatus) {
+            membershipCardStatus.textContent =
+                status;
+        }
+
+
+        const membershipDaysRemaining =
+            document.getElementById(
+                "membershipDaysRemaining"
+            );
+
+        if (membershipDaysRemaining) {
+
+            membershipDaysRemaining.textContent =
+                daysRemaining === "--"
+                    ? "--"
+                    : daysRemaining + " Days";
+        }
+
+
+        /* Membership Details */
+
+        const membershipPlan =
+            document.getElementById("membershipPlan");
+
+        const membershipPrice =
+            document.getElementById("membershipPrice");
+
+        const membershipDuration =
+            document.getElementById("membershipDuration");
+
+        const membershipStartDate =
+            document.getElementById("membershipStartDate");
+
+        const membershipExpiryDate =
+            document.getElementById("membershipExpiryDate");
+
+        const membershipDays =
+            document.getElementById("membershipDays");
+
+        const membershipStatus =
+            document.getElementById("membershipStatus");
+
+
+        if (membershipPlan) {
+            membershipPlan.textContent =
+                plan || "Not Selected";
+        }
+
+
+        if (membershipPrice) {
+
+            membershipPrice.textContent =
+                price > 0
+                    ? "₹" + price.toLocaleString("en-IN")
+                    : "--";
+        }
+
+
+        if (membershipDuration) {
+            membershipDuration.textContent =
+                durationText;
+        }
+
+
+        if (membershipStartDate) {
+            membershipStartDate.textContent =
+                formatMembershipDate(startDate);
+        }
+
+
+        if (membershipExpiryDate) {
+            membershipExpiryDate.textContent =
+                formatMembershipDate(expiryDate);
+        }
+
+
+        if (membershipDays) {
+
+            membershipDays.textContent =
+                daysRemaining === "--"
+                    ? "--"
+                    : daysRemaining + " Days";
+        }
+
+
+        if (membershipStatus) {
+            membershipStatus.textContent =
+                status;
+        }
+    }
+
+
+    /* Show / Hide Membership Plans */
+
+    function showMembershipPlans() {
+
+        const plans =
+            document.getElementById("membershipPlans");
+
+        if (!plans) {
+            return;
+        }
+
+        if (plans.style.display === "none") {
+            plans.style.display = "block";
+        } else {
+            plans.style.display = "none";
+        }
+    }
+
+
+    /* Change Membership Plan */
+
+    function changeMembership(plan) {
+
+        const duration =
+            parseInt(
+                localStorage.getItem(
+                    "fitxMembershipDuration"
+                )
+            ) || 1;
+
+
+        const price =
+            getMembershipPrice(
+                plan,
+                duration
+            );
+
+
+        localStorage.setItem(
+            "fitxMembership",
+            plan
+        );
+
+        localStorage.setItem(
+            "fitxMembershipPrice",
+            price
+        );
+
+
+        const plans =
+            document.getElementById(
+                "membershipPlans"
+            );
+
+        if (plans) {
+            plans.style.display = "none";
+        }
+
+
+        updateMembershipSystem();
+
+
+        alert(
+            plan +
+            " Membership selected! 🎉"
+        );
+    }
+
+
+    /* Change Membership Duration */
+
+
+
+
+    /* Start Membership System */
+
+    updateMembershipSystem();
+</script>
+</html>
+

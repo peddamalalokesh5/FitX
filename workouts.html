@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitX - Workouts</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav>
+    <h2 class="logo">
+        Fit<span>X</span>
+    </h2>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="workouts.html">Workouts</a>
+        <a href="diet-plans.html">Diet Plans</a>
+        <a href="membership.html">Membership</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <a href="login.html">
+        <button class="login-btn">Login</button>
+    </a>
+</nav>
+
+
+<!-- Page Header -->
+<section class="page-header">
+
+    <p class="small-title">FITX TRAINING</p>
+
+    <h1>Choose Your <span>Workout</span></h1>
+
+    <p>
+        Find the right workout for your goal and start
+        your fitness journey today.
+    </p>
+
+</section>
+
+
+<!-- Workout Cards -->
+<section class="workouts">
+
+    <div class="workout-card" onclick="selectWorkout('Muscle Building')">
+        <div class="workout-icon">💪</div>
+
+        <h2>Muscle Building</h2>
+
+        <p>
+            Build lean muscle and increase your strength
+            with structured resistance training.
+        </p>
+
+        <a href="muscle-building.html">
+            <button>View Workout</button>
+        </a>
+    </div>
+
+
+    <div class="workout-card" onclick="selectWorkout('Weight Loss')">
+        <div class="workout-icon">🔥</div>
+
+        <h2>Weight Loss</h2>
+
+        <p>
+            Burn calories, improve your fitness and work
+            towards a healthier body.
+        </p>
+
+        <a href="weight-loss.html">
+            <button>View Workout</button>
+        </a>
+    </div>
+
+
+    <div class="workout-card" onclick="selectWorkout('Strength Training')">
+        <div class="workout-icon">🏋️</div>
+
+        <h2>Strength Training</h2>
+
+        <p>
+            Improve your power and overall strength with
+            progressive training programs.
+        </p>
+
+        <a href="strength-training.html">
+            <button>View Workout</button>
+        </a>
+    </div>
+
+
+    <div class="workout-card" onclick="selectWorkout('Cardio')">
+        <div class="workout-icon">🏃</div>
+
+        <h2>Cardio</h2>
+
+        <p>
+            Improve your stamina, endurance and
+            cardiovascular fitness.
+        </p>
+
+        <a href="cardio.html">
+            <button>View Workout</button>
+        </a>
+    </div>
+
+
+    <div class="workout-card" onclick="selectWorkout('Beginner')">
+        <div class="workout-icon">🌱</div>
+
+        <h2>Beginner</h2>
+
+        <p>
+            New to fitness? Start with simple workouts
+            designed for beginners.
+        </p>
+
+        <a href="beginner.html">
+            <button>View Workout</button>
+        </a>
+    </div>
+
+
+    <div class="workout-card" onclick="selectWorkout('HIIT')">
+        <div class="workout-icon">⚡</div>
+
+        <h2>HIIT</h2>
+
+        <p>
+            Short, intense workouts designed to challenge
+            your body and improve fitness.
+        </p>
+
+        <a href="hiit.html">
+            <button>View Workout</button>
+        </a>
+    </div>
+
+</section>
+<!-- 90-Day Challenge -->
+
+<section class="challenge-status">
+
+    <h2>🏆 90-Day Challenge</h2>
+
+    <p>
+        Day <strong id="challengeDay">1</strong> of 90
+    </p>
+
+    <p>
+        Workouts:
+        <strong id="challengeWorkouts">0</strong>
+        /
+        <strong id="challengeTarget">52</strong>
+    </p>
+
+    <p>
+        🔥 Streak:
+        <strong id="challengeStreak">0</strong> Days
+    </p>
+
+</section>
+
+<!-- Workout Progress -->
+
+<section class="workout-progress">
+
+    <h2>🏋️ Workout Progress</h2>
+
+    <p>
+        90-Day Workouts Completed:
+        <strong id="workoutCount">0</strong>
+        /
+        <strong id="workout90Target">52</strong>
+    </p>
+
+    <div class="progress-bar">
+        <div id="workout90ProgressFill"></div>
+    </div>
+
+    <p>
+        This Week:
+        <strong id="weeklyWorkoutCount">0</strong>
+        /
+        <strong id="weeklyTargetDisplay">4</strong>
+    </p>
+
+    <p>
+        Weekly Target:
+
+        <select id="targetSelect" onchange="changeWorkoutTarget()">
+            <option value="3">3 Days</option>
+            <option value="4" selected>4 Days</option>
+            <option value="5">5 Days</option>
+            <option value="6">6 Days</option>
+        </select>
+    </p>
+
+    <div class="progress-bar">
+        <div id="workoutProgressFill"></div>
+    </div>
+
+    <p>
+        Today's Workout:
+
+        <select id="completedWorkout">
+            <option value="Muscle Building">💪 Muscle Building</option>
+            <option value="Weight Loss">🔥 Weight Loss</option>
+            <option value="Strength Training">🏋️ Strength Training</option>
+            <option value="Cardio">🏃 Cardio</option>
+            <option value="Beginner">🌱 Beginner</option>
+            <option value="HIIT">⚡ HIIT</option>
+        </select>
+    </p>
+
+    <button onclick="completeWorkout()">
+        Mark Workout Complete
+    </button>
+
+
+</section>
+<!-- Workout Streak -->
+
+<section class="workout-streak">
+
+    <h2>🔥 Workout Streak</h2>
+
+    <div class="streak-number">
+        <span id="workoutStreak">0</span>
+        <span>Days</span>
+    </div>
+
+    <p id="streakMessage">
+        Complete a workout to start your streak!
+    </p>
+
+</section>
+
+<!-- Workout History -->
+
+<section class="workout-history">
+
+    <h2>📋 Workout History</h2>
+
+    <div id="workoutHistoryList">
+        <p>No workouts completed yet.</p>
+    </div>
+
+    <button class="clear-history-btn" onclick="clearWorkoutHistory()">
+        🗑️ Clear History
+    </button>
+
+</section>
+<!-- Footer -->
+<footer>
+
+    <h2>Fit<span>X</span></h2>
+
+    <p>
+        Train Hard. Stay Strong. Live Better.
+    </p>
+
+    <p class="copyright">
+        © 2026 FitX. All Rights Reserved.
+    </p>
+
+</footer>
+
+<script>
+    // Login protection
+    if (localStorage.getItem("fitxLoggedIn") !== "true") {
+        alert("🔐 Please login or create an account to access FitX Workouts.");
+        window.location.href = "login.html";
+    }
+
+    // Get today's local date
+    function getLocalDate() {
+
+        const d = new Date();
+
+        return d.getFullYear() + "-" +
+            String(d.getMonth() + 1).padStart(2, "0") + "-" +
+            String(d.getDate()).padStart(2, "0");
+    }
+
+
+    // Calculate difference between two dates
+    function daysBetween(startDate, endDate) {
+
+        const start = new Date(startDate);
+        const end = new Date(endDate);
+
+        const difference =
+            Math.floor((end - start) / (1000 * 60 * 60 * 24));
+
+        return difference;
+    }
+
+
+    // Start a new 90-day cycle if needed
+    function check90DayCycle() {
+
+        const today = getLocalDate();
+
+        let startDate =
+            localStorage.getItem("fitxWorkout90StartDate");
+
+        if (!startDate) {
+
+            localStorage.setItem(
+                "fitxWorkout90StartDate",
+                today
+            );
+
+            localStorage.setItem(
+                "fitxWorkout90Count",
+                "0"
+            );
+
+            localStorage.setItem(
+                "fitxWorkout90History",
+                JSON.stringify([])
+            );
+
+            return;
+        }
+
+
+        const daysPassed =
+            daysBetween(startDate, today);
+
+
+        // Start a new cycle after 90 days
+        if (daysPassed >= 90) {
+
+            localStorage.setItem(
+                "fitxWorkout90StartDate",
+                today
+            );
+
+            localStorage.setItem(
+                "fitxWorkout90Count",
+                "0"
+            );
+
+            localStorage.setItem(
+                "fitxWorkout90History",
+                JSON.stringify([])
+            );
+        }
+    }
+
+
+    // Check weekly cycle
+    function checkWeeklyCycle() {
+
+        const today = getLocalDate();
+
+        let weekStart =
+            localStorage.getItem("fitxWorkoutWeeklyStartDate");
+
+
+        if (!weekStart) {
+
+            localStorage.setItem(
+                "fitxWorkoutWeeklyStartDate",
+                today
+            );
+
+            localStorage.setItem(
+                "fitxWorkoutWeeklyCount",
+                "0"
+            );
+
+            return;
+        }
+
+
+        const daysPassed =
+            daysBetween(weekStart, today);
+
+
+        // Start a new week after 7 days
+        if (daysPassed >= 7) {
+
+            localStorage.setItem(
+                "fitxWorkoutWeeklyStartDate",
+                today
+            );
+
+            localStorage.setItem(
+                "fitxWorkoutWeeklyCount",
+                "0"
+            );
+        }
+    }
+
+
+    // Calculate 90-day workout target
+    function get90DayTarget(weeklyTarget) {
+
+        return Math.round(
+            weeklyTarget * 90 / 7
+        );
+    }
+
+
+    // Update progress display
+    function updateWorkoutProgress() {
+
+        check90DayCycle();
+        checkWeeklyCycle();
+
+
+        let weeklyTarget =
+            parseInt(
+                localStorage.getItem("fitxWorkoutTarget")
+            ) || 4;
+
+
+        let totalCount =
+            parseInt(
+                localStorage.getItem("fitxWorkout90Count")
+            ) || 0;
+
+
+        let weeklyCount =
+            parseInt(
+                localStorage.getItem("fitxWorkoutWeeklyCount")
+            ) || 0;
+
+
+        let target90 =
+            get90DayTarget(weeklyTarget);
+
+
+        // 90-day count
+        document.getElementById("workoutCount").textContent =
+            totalCount;
+
+
+        // 90-day target
+        document.getElementById("workout90Target").textContent =
+            target90;
+
+
+        // Weekly count
+        document.getElementById("weeklyWorkoutCount").textContent =
+            weeklyCount;
+
+
+        // Weekly target
+        document.getElementById("weeklyTargetDisplay").textContent =
+            weeklyTarget;
+
+
+        // Set dropdown
+        document.getElementById("targetSelect").value =
+            weeklyTarget;
+
+
+        // 90-day progress
+        let percentage90 =
+            (totalCount / target90) * 100;
+
+
+        if (percentage90 > 100) {
+            percentage90 = 100;
+        }
+
+
+        document.getElementById(
+            "workout90ProgressFill"
+        ).style.width =
+            percentage90 + "%";
+
+
+        // Weekly progress
+        let weeklyPercentage =
+            (weeklyCount / weeklyTarget) * 100;
+
+
+        if (weeklyPercentage > 100) {
+            weeklyPercentage = 100;
+        }
+
+
+        document.getElementById(
+            "workoutProgressFill"
+        ).style.width =
+            weeklyPercentage + "%";
+    }
+
+
+    // Change weekly target
+    function changeWorkoutTarget() {
+
+        let target =
+            document.getElementById("targetSelect").value;
+
+
+        localStorage.setItem(
+            "fitxWorkoutTarget",
+            target
+        );
+
+
+        updateWorkoutProgress();
+    }
+
+
+    // Complete workout
+    function completeWorkout() {
+
+        if (localStorage.getItem("fitxLoggedIn") !== "true") {
+            alert("🔐 Please login or create an account to track your workout progress.");
+            window.location.href = "login.html";
+            return;
+        }
+
+        check90DayCycle();
+        checkWeeklyCycle();
+
+        // Get selected workout
+        const selectedWorkout =
+            document.getElementById("completedWorkout").value;
+
+        // 90-day total
+        let totalCount =
+            parseInt(localStorage.getItem("fitxWorkout90Count")) || 0;
+
+        totalCount++;
+
+        localStorage.setItem(
+            "fitxWorkout90Count",
+            totalCount
+        );
+
+        // Weekly count
+        let weeklyCount =
+            parseInt(localStorage.getItem("fitxWorkoutWeeklyCount")) || 0;
+
+        weeklyCount++;
+
+        localStorage.setItem(
+            "fitxWorkoutWeeklyCount",
+            weeklyCount
+        );
+
+        // Save history
+        let history =
+            JSON.parse(
+                localStorage.getItem("fitxWorkout90History")
+            ) || [];
+
+        history.push({
+
+            workout: selectedWorkout,
+
+            date: new Date().toLocaleDateString()
+
+        });
+
+        localStorage.setItem(
+            "fitxWorkout90History",
+            JSON.stringify(history)
+        );
+
+        updateWorkoutProgress();
+
+        loadWorkoutHistory();
+
+        alert("🎉 " + selectedWorkout + " workout completed!");
+    }
+
+
+    // Load workout history
+    function loadWorkoutHistory() {
+
+        let history =
+            JSON.parse(
+                localStorage.getItem("fitxWorkout90History")
+            ) || [];
+
+
+        const historyList =
+            document.getElementById(
+                "workoutHistoryList"
+            );
+
+
+        if (history.length === 0) {
+
+            historyList.innerHTML =
+                "<p>No workouts completed yet.</p>";
+
+            return;
+        }
+
+
+        historyList.innerHTML = "";
+
+
+        history.slice().reverse().forEach(function(item) {
+
+            historyList.innerHTML += `
+
+                <div class="history-item">
+
+                    <span class="history-workout">
+                        ${item.workout}
+                    </span>
+
+                    <span class="history-date">
+                        ${item.date}
+                    </span>
+
+                    <span class="history-status">
+                        ✅ Completed
+                    </span>
+
+                </div>
+
+            `;
+        });
+    }
+
+
+    // Start when page opens
+    check90DayCycle();
+
+    checkWeeklyCycle();
+
+    updateWorkoutStreak()
+
+    updateWorkoutProgress();
+
+    loadWorkoutHistory();
+
+    updateChallengeStatus()
+
+    function selectWorkout(workoutName) {
+
+        document.getElementById("completedWorkout").value = workoutName;
+
+        const cards = document.querySelectorAll(".workout-card");
+
+        cards.forEach(function(card) {
+            card.classList.remove("selected-workout");
+        });
+
+        cards.forEach(function(card) {
+
+            const title = card.querySelector("h2");
+
+            if (title && title.textContent.trim() === workoutName) {
+                card.classList.add("selected-workout");
+            }
+
+        });
+
+        alert("✅ " + workoutName + " selected. Ready to complete your workout!");
+    }
+    function clearWorkoutHistory() {
+
+        const confirmClear = confirm(
+            "Are you sure you want to clear your workout history?"
+        );
+
+        if (!confirmClear) {
+            return;
+        }
+
+        localStorage.setItem(
+            "fitxWorkout90History",
+            JSON.stringify([])
+        );
+
+        loadWorkoutHistory();
+
+        alert("Workout history cleared successfully! 🗑️");
+    }
+    function updateWorkoutStreak() {
+
+        const history =
+            JSON.parse(
+                localStorage.getItem("fitxWorkout90History")
+            ) || [];
+
+        const streakDisplay =
+            document.getElementById("workoutStreak");
+
+        const streakMessage =
+            document.getElementById("streakMessage");
+
+        if (history.length === 0) {
+
+            streakDisplay.textContent = "0";
+
+            streakMessage.textContent =
+                "Complete a workout to start your streak!";
+
+            return;
+        }
+
+        // Get unique workout dates
+        const dates = [...new Set(
+            history.map(function(item) {
+                return item.date;
+            })
+        )];
+
+        // Sort newest date first
+        dates.sort(function(a, b) {
+            return new Date(b) - new Date(a);
+        });
+
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const latestWorkout = new Date(dates[0]);
+        latestWorkout.setHours(0, 0, 0, 0);
+
+        const daysSinceWorkout =
+            Math.floor(
+                (today - latestWorkout) /
+                (1000 * 60 * 60 * 24)
+            );
+
+        // If no workout was completed today or yesterday,
+        // the streak is broken.
+        if (daysSinceWorkout > 1) {
+
+            streakDisplay.textContent = "0";
+
+            streakMessage.textContent =
+                "Your streak ended. Complete a workout today to start a new streak!";
+
+            return;
+        }
+
+        let streak = 1;
+
+        for (let i = 0; i < dates.length - 1; i++) {
+
+            const current =
+                new Date(dates[i]);
+
+            const previous =
+                new Date(dates[i + 1]);
+
+            current.setHours(0, 0, 0, 0);
+            previous.setHours(0, 0, 0, 0);
+
+            const difference =
+                Math.floor(
+                    (current - previous) /
+                    (1000 * 60 * 60 * 24)
+                );
+
+            if (difference === 1) {
+
+                streak++;
+
+            } else {
+
+                break;
+            }
+        }
+
+        streakDisplay.textContent = streak;
+
+        if (streak === 1) {
+
+            streakMessage.textContent =
+                "🔥 Great start! Complete another workout tomorrow.";
+
+        } else {
+
+            streakMessage.textContent =
+                "🔥 Keep going! You're building a great streak.";
+
+        }
+    }
+    function updateChallengeStatus() {
+
+        const startDate =
+            localStorage.getItem("fitxWorkout90StartDate");
+
+        const totalWorkouts =
+            parseInt(
+                localStorage.getItem("fitxWorkout90Count")
+            ) || 0;
+
+        const weeklyTarget =
+            parseInt(
+                localStorage.getItem("fitxWorkoutTarget")
+            ) || 4;
+
+        const target90 =
+            get90DayTarget(weeklyTarget);
+
+        const challengeDay =
+            startDate
+                ? Math.min(daysBetween(startDate, getLocalDate()) + 1, 90)
+                : 1;
+
+        const streak =
+            document.getElementById("workoutStreak").textContent;
+
+        document.getElementById("challengeDay").textContent =
+            challengeDay;
+
+        document.getElementById("challengeWorkouts").textContent =
+            totalWorkouts;
+
+        document.getElementById("challengeTarget").textContent =
+            target90;
+
+        document.getElementById("challengeStreak").textContent =
+            streak;
+    }
+
+    updateChallengeStatus();
+</script>
+
+</body>
+
+</html>

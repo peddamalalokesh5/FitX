@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitX - Beginner Workout</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        .beginner-page {
+            width: 90%;
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+        .beginner-page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .beginner-page-header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .beginner-page-header h1 span {
+            color: #39ff14;
+        }
+
+        .beginner-page-header p {
+            color: #bdbdbd;
+            font-size: 16px;
+        }
+
+        .beginner-groups {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .beginner-group-card {
+            background: #151515;
+            border: 1px solid #292929;
+            border-radius: 12px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .beginner-group-card:hover {
+            transform: translateY(-5px);
+            border-color: #39ff14;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.15);
+        }
+
+        .beginner-group-card h2 {
+            color: #39ff14;
+            margin-bottom: 20px;
+        }
+
+        .beginner-group-card ul {
+            padding-left: 20px;
+            color: #bdbdbd;
+            line-height: 2;
+        }
+
+        .training-guidelines {
+            margin-top: 50px;
+            background: #151515;
+            border: 1px solid #292929;
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .training-guidelines h2 {
+            color: #39ff14;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .training-guidelines ul {
+            color: #bdbdbd;
+            line-height: 2;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 40px auto;
+            padding: 10px 20px;
+            background: #39ff14;
+            color: #000;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .back-button:hover {
+            background: transparent;
+            color: #39ff14;
+            border: 1px solid #39ff14;
+        }
+
+        @media (max-width: 800px) {
+
+            .beginner-groups {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+
+<nav>
+
+    <h2 class="logo">
+        Fit<span>X</span>
+    </h2>
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+        <a href="workouts.html">Workouts</a>
+        <a href="diet-plans.html">Diet Plans</a>
+        <a href="membership.html">Membership</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+    <a href="login.html">
+        <button class="login-btn">Login</button>
+    </a>
+
+</nav>
+
+
+<!-- Beginner Workout Page -->
+
+<section class="beginner-page">
+
+    <div class="beginner-page-header">
+
+        <h1>🌱 <span>Beginner Workout</span></h1>
+
+        <p>
+            Start your fitness journey with simple,
+            safe and effective exercises.
+        </p>
+
+    </div>
+
+
+    <!-- Beginner Workout Categories -->
+
+    <div class="beginner-groups">
+
+
+        <!-- Warm Up -->
+
+        <div class="beginner-group-card">
+
+            <h2>🔥 Warm-Up</h2>
+
+            <ul>
+
+                <li>Arm Circles</li>
+                <li>Shoulder Rolls</li>
+                <li>Neck Rotations</li>
+                <li>Marching in Place</li>
+                <li>Light Jogging</li>
+                <li>Jumping Jacks</li>
+                <li>Hip Circles</li>
+                <li>Leg Swings</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Upper Body -->
+
+        <div class="beginner-group-card">
+
+            <h2>💪 Upper Body</h2>
+
+            <ul>
+
+                <li>Wall Push-Ups</li>
+                <li>Incline Push-Ups</li>
+                <li>Knee Push-Ups</li>
+                <li>Regular Push-Ups</li>
+                <li>Dumbbell Press</li>
+                <li>Dumbbell Rows</li>
+                <li>Shoulder Press</li>
+                <li>Bicep Curls</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Lower Body -->
+
+        <div class="beginner-group-card">
+
+            <h2>🦵 Lower Body</h2>
+
+            <ul>
+
+                <li>Bodyweight Squats</li>
+                <li>Chair Squats</li>
+                <li>Reverse Lunges</li>
+                <li>Step-Ups</li>
+                <li>Glute Bridges</li>
+                <li>Calf Raises</li>
+                <li>Wall Sit</li>
+                <li>Bodyweight Lunges</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Core -->
+
+        <div class="beginner-group-card">
+
+            <h2>🎯 Core</h2>
+
+            <ul>
+
+                <li>Plank</li>
+                <li>Knee Plank</li>
+                <li>Crunches</li>
+                <li>Dead Bug</li>
+                <li>Bird Dog</li>
+                <li>Leg Raises</li>
+                <li>Heel Taps</li>
+                <li>Mountain Climbers</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Cardio -->
+
+        <div class="beginner-group-card">
+
+            <h2>🏃 Cardio</h2>
+
+            <ul>
+
+                <li>Walking</li>
+                <li>Brisk Walking</li>
+                <li>Light Jogging</li>
+                <li>Cycling</li>
+                <li>Stationary Bike</li>
+                <li>Step-Ups</li>
+                <li>Light Jump Rope</li>
+                <li>Swimming</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Stretching -->
+
+        <div class="beginner-group-card">
+
+            <h2>🧘 Stretching</h2>
+
+            <ul>
+
+                <li>Hamstring Stretch</li>
+                <li>Quad Stretch</li>
+                <li>Calf Stretch</li>
+                <li>Chest Stretch</li>
+                <li>Shoulder Stretch</li>
+                <li>Hip Stretch</li>
+                <li>Back Stretch</li>
+                <li>Child's Pose</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- Training Guidelines -->
+
+    <div class="training-guidelines">
+
+        <h2>🌱 Beginner Training Guidelines</h2>
+
+        <ul>
+
+            <li>
+                <strong>Start Slowly:</strong>
+                Begin with simple exercises and gradually
+                increase the difficulty.
+            </li>
+
+            <li>
+                <strong>Sets & Repetitions:</strong>
+                Start with around 2 to 3 sets of 8 to 12
+                comfortable repetitions.
+            </li>
+
+            <li>
+                <strong>Warm-Up:</strong>
+                Always warm up before exercising to prepare
+                your muscles and joints.
+            </li>
+
+            <li>
+                <strong>Technique:</strong>
+                Learn the correct exercise form before
+                increasing weight or intensity.
+            </li>
+
+            <li>
+                <strong>Rest:</strong>
+                Take rest days and avoid training through
+                significant pain.
+            </li>
+
+            <li>
+                <strong>Consistency:</strong>
+                Focus on building a regular exercise habit
+                rather than trying to progress too quickly.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <a href="workouts.html" class="back-button">
+        ← Back to Workouts
+    </a>
+    <button class="back-button" onclick="completeWorkoutPage('Beginner')">
+        ✅ Mark Workout Complete
+    </button>
+</section>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <h2>Fit<span>X</span></h2>
+
+    <p>
+        Train Hard. Stay Strong. Live Better.
+    </p>
+
+    <p class="copyright">
+        ©️ 2026 FitX. All Rights Reserved.
+    </p>
+
+</footer>
+<script>
+
+    function completeWorkoutPage(workoutName) {
+
+        let startDate =
+            localStorage.getItem("fitxWorkout90StartDate");
+
+        if (!startDate) {
+
+            const d = new Date();
+
+            startDate =
+                d.getFullYear() + "-" +
+                String(d.getMonth() + 1).padStart(2, "0") + "-" +
+                String(d.getDate()).padStart(2, "0");
+
+            localStorage.setItem(
+                "fitxWorkout90StartDate",
+                startDate
+            );
+
+            localStorage.setItem(
+                "fitxWorkout90Count",
+                "0"
+            );
+
+            localStorage.setItem(
+                "fitxWorkout90History",
+                JSON.stringify([])
+            );
+        }
+
+
+        let totalCount =
+            parseInt(
+                localStorage.getItem("fitxWorkout90Count")
+            ) || 0;
+
+        totalCount++;
+
+        localStorage.setItem(
+            "fitxWorkout90Count",
+            totalCount
+        );
+
+
+        let weeklyCount =
+            parseInt(
+                localStorage.getItem("fitxWorkoutWeeklyCount")
+            ) || 0;
+
+        weeklyCount++;
+
+        localStorage.setItem(
+            "fitxWorkoutWeeklyCount",
+            weeklyCount
+        );
+
+
+        let history =
+            JSON.parse(
+                localStorage.getItem("fitxWorkout90History")
+            ) || [];
+
+
+        let today =
+            new Date().toLocaleDateString();
+
+
+        history.push({
+
+            workout: workoutName,
+
+            date: today
+
+        });
+
+
+        localStorage.setItem(
+            "fitxWorkout90History",
+            JSON.stringify(history)
+        );
+
+
+        alert(
+            workoutName +
+            " workout completed! 💪"
+        );
+
+
+        window.location.href =
+            "workouts.html";
+    }
+
+</script>
+
+</body>
+
+</html>

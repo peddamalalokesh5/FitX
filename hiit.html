@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitX - HIIT Workout</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        .hiit-page {
+            width: 90%;
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+        .hiit-page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hiit-page-header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .hiit-page-header h1 span {
+            color: #39ff14;
+        }
+
+        .hiit-page-header p {
+            color: #bdbdbd;
+            font-size: 16px;
+        }
+
+        .hiit-groups {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .hiit-group-card {
+            background: #151515;
+            border: 1px solid #292929;
+            border-radius: 12px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .hiit-group-card:hover {
+            transform: translateY(-5px);
+            border-color: #39ff14;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.15);
+        }
+
+        .hiit-group-card h2 {
+            color: #39ff14;
+            margin-bottom: 20px;
+        }
+
+        .hiit-group-card ul {
+            padding-left: 20px;
+            color: #bdbdbd;
+            line-height: 2;
+        }
+
+        .training-guidelines {
+            margin-top: 50px;
+            background: #151515;
+            border: 1px solid #292929;
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .training-guidelines h2 {
+            color: #39ff14;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .training-guidelines ul {
+            color: #bdbdbd;
+            line-height: 2;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 40px auto;
+            padding: 10px 20px;
+            background: #39ff14;
+            color: #000;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .back-button:hover {
+            background: transparent;
+            color: #39ff14;
+            border: 1px solid #39ff14;
+        }
+
+        @media (max-width: 800px) {
+
+            .hiit-groups {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+
+<nav>
+
+    <h2 class="logo">
+        Fit<span>X</span>
+    </h2>
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+        <a href="workouts.html">Workouts</a>
+        <a href="diet-plans.html">Diet Plans</a>
+        <a href="membership.html">Membership</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+    <a href="login.html">
+        <button class="login-btn">Login</button>
+    </a>
+
+</nav>
+
+
+<!-- HIIT Page -->
+
+<section class="hiit-page">
+
+    <div class="hiit-page-header">
+
+        <h1>🔥 <span>HIIT Workout</span></h1>
+
+        <p>
+            High-intensity interval training to improve
+            fitness, stamina and calorie burning.
+        </p>
+
+    </div>
+
+
+    <!-- HIIT Categories -->
+
+    <div class="hiit-groups">
+
+
+        <!-- Full Body -->
+
+        <div class="hiit-group-card">
+
+            <h2>🔥 Full Body</h2>
+
+            <ul>
+
+                <li>Burpees</li>
+                <li>Jumping Jacks</li>
+                <li>High Knees</li>
+                <li>Mountain Climbers</li>
+                <li>Jump Squats</li>
+                <li>Skater Jumps</li>
+                <li>Squat Thrusts</li>
+                <li>Bear Crawls</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Lower Body -->
+
+        <div class="hiit-group-card">
+
+            <h2>🦵 Lower Body</h2>
+
+            <ul>
+
+                <li>Jump Squats</li>
+                <li>Reverse Lunges</li>
+                <li>Split Squats</li>
+                <li>Skater Jumps</li>
+                <li>High Knees</li>
+                <li>Fast Feet</li>
+                <li>Step-Ups</li>
+                <li>Jump Lunges</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Core -->
+
+        <div class="hiit-group-card">
+
+            <h2>🎯 Core</h2>
+
+            <ul>
+
+                <li>Mountain Climbers</li>
+                <li>Plank Jacks</li>
+                <li>Plank Shoulder Taps</li>
+                <li>Bicycle Crunches</li>
+                <li>Russian Twists</li>
+                <li>Leg Raises</li>
+                <li>V-Ups</li>
+                <li>Dead Bug</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Cardio -->
+
+        <div class="hiit-group-card">
+
+            <h2>🏃 Cardio</h2>
+
+            <ul>
+
+                <li>Sprint Intervals</li>
+                <li>Jump Rope</li>
+                <li>High Knees</li>
+                <li>Fast Feet</li>
+                <li>Jumping Jacks</li>
+                <li>Butt Kicks</li>
+                <li>Shuttle Runs</li>
+                <li>Mountain Climbers</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Upper Body -->
+
+        <div class="hiit-group-card">
+
+            <h2>💪 Upper Body</h2>
+
+            <ul>
+
+                <li>Push-Ups</li>
+                <li>Incline Push-Ups</li>
+                <li>Plank Shoulder Taps</li>
+                <li>Bear Crawls</li>
+                <li>Mountain Climbers</li>
+                <li>Triceps Dips</li>
+                <li>Renegade Rows</li>
+                <li>Sprawls</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Beginner HIIT -->
+
+        <div class="hiit-group-card">
+
+            <h2>🌱 Beginner HIIT</h2>
+
+            <ul>
+
+                <li>Marching in Place</li>
+                <li>Step Jacks</li>
+                <li>Bodyweight Squats</li>
+                <li>Wall Push-Ups</li>
+                <li>Low Step-Ups</li>
+                <li>Slow Mountain Climbers</li>
+                <li>Low-Impact High Knees</li>
+                <li>Standing Knee Raises</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- Training Guidelines -->
+
+    <div class="training-guidelines">
+
+        <h2>🔥 HIIT Training Guidelines</h2>
+
+        <ul>
+
+            <li>
+                <strong>Warm-Up:</strong>
+                Warm up for around 5 to 10 minutes before
+                starting high-intensity exercises.
+            </li>
+
+            <li>
+                <strong>Work & Rest:</strong>
+                Beginners can start with shorter work intervals
+                followed by adequate recovery.
+            </li>
+
+            <li>
+                <strong>Intensity:</strong>
+                Perform each exercise with good technique and
+                increase intensity gradually.
+            </li>
+
+            <li>
+                <strong>Duration:</strong>
+                A short HIIT session can be effective; avoid
+                unnecessarily long high-intensity workouts.
+            </li>
+
+            <li>
+                <strong>Recovery:</strong>
+                Allow sufficient recovery between demanding
+                HIIT sessions.
+            </li>
+
+            <li>
+                <strong>Technique:</strong>
+                Stop or reduce intensity if you cannot maintain
+                proper exercise form.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <a href="workouts.html" class="back-button">
+        ← Back to Workouts
+    </a>
+    <button class="back-button" onclick="completeWorkoutPage('HIIT')">
+        ✅ Mark Workout Complete
+    </button>
+</section>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <h2>Fit<span>X</span></h2>
+
+    <p>
+        Train Hard. Stay Strong. Live Better.
+    </p>
+
+    <p class="copyright">
+        ©️ 2026 FitX. All Rights Reserved.
+    </p>
+
+</footer>
+<script>
+
+    function completeWorkoutPage(workoutName) {
+
+        let startDate =
+            localStorage.getItem("fitxWorkout90StartDate");
+
+        if (!startDate) {
+
+            const d = new Date();
+
+            startDate =
+                d.getFullYear() + "-" +
+                String(d.getMonth() + 1).padStart(2, "0") + "-" +
+                String(d.getDate()).padStart(2, "0");
+
+            localStorage.setItem(
+                "fitxWorkout90StartDate",
+                startDate
+            );
+
+            localStorage.setItem(
+                "fitxWorkout90Count",
+                "0"
+            );
+
+            localStorage.setItem(
+                "fitxWorkout90History",
+                JSON.stringify([])
+            );
+        }
+
+
+        let totalCount =
+            parseInt(
+                localStorage.getItem("fitxWorkout90Count")
+            ) || 0;
+
+        totalCount++;
+
+        localStorage.setItem(
+            "fitxWorkout90Count",
+            totalCount
+        );
+
+
+        let weeklyCount =
+            parseInt(
+                localStorage.getItem("fitxWorkoutWeeklyCount")
+            ) || 0;
+
+        weeklyCount++;
+
+        localStorage.setItem(
+            "fitxWorkoutWeeklyCount",
+            weeklyCount
+        );
+
+
+        let history =
+            JSON.parse(
+                localStorage.getItem("fitxWorkout90History")
+            ) || [];
+
+
+        let today =
+            new Date().toLocaleDateString();
+
+
+        history.push({
+
+            workout: workoutName,
+
+            date: today
+
+        });
+
+
+        localStorage.setItem(
+            "fitxWorkout90History",
+            JSON.stringify(history)
+        );
+
+
+        alert(
+            workoutName +
+            " workout completed! 💪"
+        );
+
+
+        window.location.href =
+            "workouts.html";
+    }
+
+</script>
+
+</body>
+
+</html>

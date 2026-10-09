@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitX - Healthy Lifestyle Diet</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        .diet-page {
+            width: 90%;
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+        .diet-page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .diet-page-header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .diet-page-header h1 span {
+            color: #39ff14;
+        }
+
+        .diet-page-header p {
+            color: #bdbdbd;
+            font-size: 16px;
+        }
+
+        .diet-groups {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .diet-card {
+            background: #151515;
+            border: 1px solid #292929;
+            border-radius: 12px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .diet-card:hover {
+            transform: translateY(-5px);
+            border-color: #39ff14;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.15);
+        }
+
+        .diet-card h2 {
+            color: #39ff14;
+            margin-bottom: 20px;
+        }
+
+        .diet-card ul {
+            padding-left: 20px;
+            color: #bdbdbd;
+            line-height: 2;
+        }
+
+        .diet-guidelines {
+            margin-top: 50px;
+            background: #151515;
+            border: 1px solid #292929;
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .diet-guidelines h2 {
+            color: #39ff14;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .diet-guidelines ul {
+            color: #bdbdbd;
+            line-height: 2;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 40px auto;
+            padding: 10px 20px;
+            background: #39ff14;
+            color: #000;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .back-button:hover {
+            background: transparent;
+            color: #39ff14;
+            border: 1px solid #39ff14;
+        }
+
+        @media (max-width: 800px) {
+
+            .diet-groups {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+
+<nav>
+
+    <h2 class="logo">
+        Fit<span>X</span>
+    </h2>
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+        <a href="workouts.html">Workouts</a>
+        <a href="diet-plans.html">Diet Plans</a>
+        <a href="membership.html">Membership</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+    <a href="login.html">
+        <button class="login-btn">Login</button>
+    </a>
+
+</nav>
+
+
+<!-- Healthy Lifestyle Diet Page -->
+
+<section class="diet-page">
+
+    <div class="diet-page-header">
+
+        <h1>🌱 <span>Healthy Lifestyle</span></h1>
+
+        <p>
+            Build a balanced eating routine with nutritious
+            foods that support everyday health and fitness.
+        </p>
+
+    </div>
+
+
+    <div class="diet-groups">
+
+
+        <!-- Breakfast -->
+
+        <div class="diet-card">
+
+            <h2>🌅 Breakfast</h2>
+
+            <ul>
+
+                <li>Oats with fruits</li>
+                <li>Idli with sambar</li>
+                <li>Vegetable upma</li>
+                <li>Vegetable dosa</li>
+                <li>Eggs with whole-grain toast</li>
+                <li>Poha with vegetables</li>
+                <li>Curd with fruits</li>
+                <li>Healthy vegetable sandwich</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Lunch -->
+
+        <div class="diet-card">
+
+            <h2>🍱 Lunch</h2>
+
+            <ul>
+
+                <li>Rice with dal</li>
+                <li>Roti with vegetables</li>
+                <li>Vegetable pulao</li>
+                <li>Grilled chicken</li>
+                <li>Fish with vegetables</li>
+                <li>Paneer with vegetables</li>
+                <li>Curd</li>
+                <li>Fresh vegetable salad</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Fruits -->
+
+        <div class="diet-card">
+
+            <h2>🍎 Fruits</h2>
+
+            <ul>
+
+                <li>Apple</li>
+                <li>Banana</li>
+                <li>Orange</li>
+                <li>Guava</li>
+                <li>Papaya</li>
+                <li>Watermelon</li>
+                <li>Pomegranate</li>
+                <li>Seasonal fruits</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Vegetables -->
+
+        <div class="diet-card">
+
+            <h2>🥦 Vegetables</h2>
+
+            <ul>
+
+                <li>Carrot</li>
+                <li>Spinach</li>
+                <li>Broccoli</li>
+                <li>Beans</li>
+                <li>Tomato</li>
+                <li>Cucumber</li>
+                <li>Capsicum</li>
+                <li>Mixed vegetables</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Healthy Snacks -->
+
+        <div class="diet-card">
+
+            <h2>🥜 Healthy Snacks</h2>
+
+            <ul>
+
+                <li>Almonds</li>
+                <li>Peanuts</li>
+                <li>Roasted chana</li>
+                <li>Fruit</li>
+                <li>Greek yogurt</li>
+                <li>Boiled eggs</li>
+                <li>Seeds</li>
+                <li>Homemade snacks</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Hydration -->
+
+        <div class="diet-card">
+
+            <h2>💧 Hydration</h2>
+
+            <ul>
+
+                <li>Water</li>
+                <li>Buttermilk</li>
+                <li>Coconut water</li>
+                <li>Unsweetened tea</li>
+                <li>Unsweetened coffee</li>
+                <li>Lemon water</li>
+                <li>Milk</li>
+                <li>Herbal tea</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- Diet Guidelines -->
+
+    <div class="diet-guidelines">
+
+        <h2>🌱 Healthy Lifestyle Guidelines</h2>
+
+        <ul>
+
+            <li>
+                <strong>Balanced Meals:</strong>
+                Include a variety of vegetables, fruits,
+                protein sources and whole grains.
+            </li>
+
+            <li>
+                <strong>Protein:</strong>
+                Include suitable protein sources such as
+                eggs, dal, dairy, fish, chicken or legumes.
+            </li>
+
+            <li>
+                <strong>Fruits & Vegetables:</strong>
+                Eat a variety of colorful fruits and vegetables
+                throughout the week.
+            </li>
+
+            <li>
+                <strong>Hydration:</strong>
+                Drink water regularly throughout the day and
+                limit sugary beverages.
+            </li>
+
+            <li>
+                <strong>Healthy Portions:</strong>
+                Choose portions that match your energy needs
+                and activity level.
+            </li>
+
+            <li>
+                <strong>Consistency:</strong>
+                Focus on healthy habits that you can maintain
+                for the long term rather than extreme diets.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <a href="diet-plans.html" class="back-button">
+        ← Back to Diet Plans
+    </a>
+
+</section>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <h2>Fit<span>X</span></h2>
+
+    <p>
+        Train Hard. Stay Strong. Live Better.
+    </p>
+
+    <p class="copyright">
+        ©️ 2026 FitX. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

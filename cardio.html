@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitX - Cardio</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        .cardio-page {
+            width: 90%;
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+        .cardio-page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .cardio-page-header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .cardio-page-header h1 span {
+            color: #39ff14;
+        }
+
+        .cardio-page-header p {
+            color: #bdbdbd;
+            font-size: 16px;
+        }
+
+        .cardio-groups {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .cardio-group-card {
+            background: #151515;
+            border: 1px solid #292929;
+            border-radius: 12px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .cardio-group-card:hover {
+            transform: translateY(-5px);
+            border-color: #39ff14;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.15);
+        }
+
+        .cardio-group-card h2 {
+            color: #39ff14;
+            margin-bottom: 20px;
+        }
+
+        .cardio-group-card ul {
+            padding-left: 20px;
+            color: #bdbdbd;
+            line-height: 2;
+        }
+
+        .training-guidelines {
+            margin-top: 50px;
+            background: #151515;
+            border: 1px solid #292929;
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .training-guidelines h2 {
+            color: #39ff14;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .training-guidelines ul {
+            color: #bdbdbd;
+            line-height: 2;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 40px auto;
+            padding: 10px 20px;
+            background: #39ff14;
+            color: #000;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .back-button:hover {
+            background: transparent;
+            color: #39ff14;
+            border: 1px solid #39ff14;
+        }
+
+        @media (max-width: 800px) {
+
+            .cardio-groups {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+
+<nav>
+
+    <h2 class="logo">
+        Fit<span>X</span>
+    </h2>
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+        <a href="workouts.html">Workouts</a>
+        <a href="diet-plans.html">Diet Plans</a>
+        <a href="membership.html">Membership</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+    <a href="login.html">
+        <button class="login-btn">Login</button>
+    </a>
+
+</nav>
+
+
+<!-- Cardio Page -->
+
+<section class="cardio-page">
+
+    <div class="cardio-page-header">
+
+        <h1>🏃 <span>Cardio Training</span></h1>
+
+        <p>
+            Improve your heart health, endurance and stamina
+            with effective cardio exercises.
+        </p>
+
+    </div>
+
+
+    <!-- Cardio Categories -->
+
+    <div class="cardio-groups">
+
+
+        <!-- Running -->
+
+        <div class="cardio-group-card">
+
+            <h2>🏃 Running</h2>
+
+            <ul>
+
+                <li>Easy Jogging</li>
+                <li>Outdoor Running</li>
+                <li>Treadmill Running</li>
+                <li>Interval Running</li>
+                <li>Hill Running</li>
+                <li>Sprint Intervals</li>
+                <li>Long Distance Running</li>
+                <li>Tempo Running</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Cycling -->
+
+        <div class="cardio-group-card">
+
+            <h2>🚴 Cycling</h2>
+
+            <ul>
+
+                <li>Outdoor Cycling</li>
+                <li>Stationary Bike</li>
+                <li>Spin Cycling</li>
+                <li>Hill Cycling</li>
+                <li>Interval Cycling</li>
+                <li>Low Intensity Cycling</li>
+                <li>Endurance Cycling</li>
+                <li>Fast Cycling</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Jump Rope -->
+
+        <div class="cardio-group-card">
+
+            <h2>🪢 Jump Rope</h2>
+
+            <ul>
+
+                <li>Basic Jump</li>
+                <li>Alternate Foot Jump</li>
+                <li>High Knees</li>
+                <li>Side-to-Side Jump</li>
+                <li>Double Unders</li>
+                <li>Fast Skips</li>
+                <li>Crossovers</li>
+                <li>Interval Skipping</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Machines -->
+
+        <div class="cardio-group-card">
+
+            <h2>🏋️ Cardio Machines</h2>
+
+            <ul>
+
+                <li>Treadmill</li>
+                <li>Elliptical</li>
+                <li>Stationary Bike</li>
+                <li>Rowing Machine</li>
+                <li>Stair Climber</li>
+                <li>Cross Trainer</li>
+                <li>Air Bike</li>
+                <li>Ski Erg</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- HIIT -->
+
+        <div class="cardio-group-card">
+
+            <h2>🔥 HIIT Cardio</h2>
+
+            <ul>
+
+                <li>Burpees</li>
+                <li>High Knees</li>
+                <li>Mountain Climbers</li>
+                <li>Jump Squats</li>
+                <li>Jumping Jacks</li>
+                <li>Fast Feet</li>
+                <li>Skater Jumps</li>
+                <li>Sprint Intervals</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Low Impact -->
+
+        <div class="cardio-group-card">
+
+            <h2>🧘 Low Impact</h2>
+
+            <ul>
+
+                <li>Brisk Walking</li>
+                <li>Light Cycling</li>
+                <li>Swimming</li>
+                <li>Elliptical</li>
+                <li>Low Step-Ups</li>
+                <li>Water Walking</li>
+                <li>Light Rowing</li>
+                <li>Easy Jogging</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- Training Guidelines -->
+
+    <div class="training-guidelines">
+
+        <h2>❤️ Cardio Training Guidelines</h2>
+
+        <ul>
+
+            <li>
+                <strong>Warm-Up:</strong>
+                Begin with 5 to 10 minutes of light movement
+                before intense cardio.
+            </li>
+
+            <li>
+                <strong>Duration:</strong>
+                Start with manageable sessions and gradually
+                increase your workout duration.
+            </li>
+
+            <li>
+                <strong>Intensity:</strong>
+                Mix moderate cardio with occasional higher
+                intensity sessions based on your fitness level.
+            </li>
+
+            <li>
+                <strong>Consistency:</strong>
+                Regular cardio training is more beneficial
+                than occasional very intense workouts.
+            </li>
+
+            <li>
+                <strong>Hydration:</strong>
+                Drink enough water before, during and after
+                your workout.
+            </li>
+
+            <li>
+                <strong>Recovery:</strong>
+                Allow your body enough time to recover,
+                especially after demanding cardio sessions.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <a href="workouts.html" class="back-button">
+        ← Back to Workouts
+    </a>
+    <button class="back-button" onclick="completeWorkoutPage('Cardio')">
+        ✅ Mark Workout Complete
+    </button>
+</section>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <h2>Fit<span>X</span></h2>
+
+    <p>
+        Train Hard. Stay Strong. Live Better.
+    </p>
+
+    <p class="copyright">
+        ©️ 2026 FitX. All Rights Reserved.
+    </p>
+
+</footer>
+<script>
+
+    function completeWorkoutPage(workoutName) {
+
+        let startDate =
+            localStorage.getItem("fitxWorkout90StartDate");
+
+        if (!startDate) {
+
+            const d = new Date();
+
+            startDate =
+                d.getFullYear() + "-" +
+                String(d.getMonth() + 1).padStart(2, "0") + "-" +
+                String(d.getDate()).padStart(2, "0");
+
+            localStorage.setItem(
+                "fitxWorkout90StartDate",
+                startDate
+            );
+
+            localStorage.setItem(
+                "fitxWorkout90Count",
+                "0"
+            );
+
+            localStorage.setItem(
+                "fitxWorkout90History",
+                JSON.stringify([])
+            );
+        }
+
+
+        let totalCount =
+            parseInt(
+                localStorage.getItem("fitxWorkout90Count")
+            ) || 0;
+
+        totalCount++;
+
+        localStorage.setItem(
+            "fitxWorkout90Count",
+            totalCount
+        );
+
+
+        let weeklyCount =
+            parseInt(
+                localStorage.getItem("fitxWorkoutWeeklyCount")
+            ) || 0;
+
+        weeklyCount++;
+
+        localStorage.setItem(
+            "fitxWorkoutWeeklyCount",
+            weeklyCount
+        );
+
+
+        let history =
+            JSON.parse(
+                localStorage.getItem("fitxWorkout90History")
+            ) || [];
+
+
+        let today =
+            new Date().toLocaleDateString();
+
+
+        history.push({
+
+            workout: workoutName,
+
+            date: today
+
+        });
+
+
+        localStorage.setItem(
+            "fitxWorkout90History",
+            JSON.stringify(history)
+        );
+
+
+        alert(
+            workoutName +
+            " workout completed! 💪"
+        );
+
+
+        window.location.href =
+            "workouts.html";
+    }
+
+</script>
+</body>
+
+</html>

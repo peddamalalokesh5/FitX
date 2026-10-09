@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitX - Strength Training</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        .strength-page {
+            width: 90%;
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+        .strength-page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .strength-page-header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .strength-page-header h1 span {
+            color: #39ff14;
+        }
+
+        .strength-page-header p {
+            color: #bdbdbd;
+            font-size: 16px;
+        }
+
+        .strength-groups {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .strength-group-card {
+            background: #151515;
+            border: 1px solid #292929;
+            border-radius: 12px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .strength-group-card:hover {
+            transform: translateY(-5px);
+            border-color: #39ff14;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.15);
+        }
+
+        .strength-group-card h2 {
+            color: #39ff14;
+            margin-bottom: 20px;
+        }
+
+        .strength-group-card ul {
+            padding-left: 20px;
+            color: #bdbdbd;
+            line-height: 2;
+        }
+
+        .training-guidelines {
+            margin-top: 50px;
+            background: #151515;
+            border: 1px solid #292929;
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .training-guidelines h2 {
+            color: #39ff14;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .training-guidelines ul {
+            color: #bdbdbd;
+            line-height: 2;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 40px auto;
+            padding: 10px 20px;
+            background: #39ff14;
+            color: #000;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .back-button:hover {
+            background: transparent;
+            color: #39ff14;
+            border: 1px solid #39ff14;
+        }
+
+        @media (max-width: 800px) {
+
+            .strength-groups {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+
+<nav>
+
+    <h2 class="logo">
+        Fit<span>X</span>
+    </h2>
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+        <a href="workouts.html">Workouts</a>
+        <a href="diet-plans.html">Diet Plans</a>
+        <a href="membership.html">Membership</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+    <a href="login.html">
+        <button class="login-btn">Login</button>
+    </a>
+
+</nav>
+
+
+<!-- Strength Training Page -->
+
+<section class="strength-page">
+
+    <div class="strength-page-header">
+
+        <h1>🏋️ <span>Strength Training</span></h1>
+
+        <p>
+            Build strength, improve power and develop
+            a stronger and more capable body.
+        </p>
+
+    </div>
+
+
+    <!-- Strength Categories -->
+
+    <div class="strength-groups">
+
+
+        <!-- Chest -->
+
+        <div class="strength-group-card">
+
+            <h2>🫀 Chest</h2>
+
+            <ul>
+
+                <li>Barbell Bench Press</li>
+                <li>Incline Bench Press</li>
+                <li>Dumbbell Press</li>
+                <li>Push-Ups</li>
+                <li>Chest Dips</li>
+                <li>Close Grip Bench Press</li>
+                <li>Floor Press</li>
+                <li>Cable Press</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Back -->
+
+        <div class="strength-group-card">
+
+            <h2>🔙 Back</h2>
+
+            <ul>
+
+                <li>Deadlift</li>
+                <li>Barbell Row</li>
+                <li>Pull-Ups</li>
+                <li>Lat Pulldown</li>
+                <li>Seated Cable Row</li>
+                <li>Dumbbell Row</li>
+                <li>T-Bar Row</li>
+                <li>Rack Pull</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Legs -->
+
+        <div class="strength-group-card">
+
+            <h2>🦵 Legs</h2>
+
+            <ul>
+
+                <li>Barbell Squat</li>
+                <li>Front Squat</li>
+                <li>Leg Press</li>
+                <li>Romanian Deadlift</li>
+                <li>Walking Lunges</li>
+                <li>Leg Extension</li>
+                <li>Leg Curl</li>
+                <li>Calf Raises</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Shoulders -->
+
+        <div class="strength-group-card">
+
+            <h2>🏋️ Shoulders</h2>
+
+            <ul>
+
+                <li>Overhead Press</li>
+                <li>Dumbbell Shoulder Press</li>
+                <li>Arnold Press</li>
+                <li>Lateral Raises</li>
+                <li>Front Raises</li>
+                <li>Rear Delt Fly</li>
+                <li>Face Pulls</li>
+                <li>Upright Row</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Arms -->
+
+        <div class="strength-group-card">
+
+            <h2>💪 Arms</h2>
+
+            <ul>
+
+                <li>Barbell Curl</li>
+                <li>Hammer Curl</li>
+                <li>Preacher Curl</li>
+                <li>Triceps Pushdown</li>
+                <li>Skull Crushers</li>
+                <li>Close Grip Bench Press</li>
+                <li>Overhead Triceps Extension</li>
+                <li>Dumbbell Curl</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Core -->
+
+        <div class="strength-group-card">
+
+            <h2>🎯 Core</h2>
+
+            <ul>
+
+                <li>Plank</li>
+                <li>Hanging Leg Raises</li>
+                <li>Crunches</li>
+                <li>Ab Wheel Rollout</li>
+                <li>Russian Twists</li>
+                <li>Side Plank</li>
+                <li>Dead Bug</li>
+                <li>Mountain Climbers</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- Training Guidelines -->
+
+    <div class="training-guidelines">
+
+        <h2>🏋️ Strength Training Guidelines</h2>
+
+        <ul>
+
+            <li>
+                <strong>Sets:</strong>
+                Perform around 3 to 5 working sets for
+                major strength exercises.
+            </li>
+
+            <li>
+                <strong>Repetitions:</strong>
+                Use controlled repetitions and choose a
+                suitable rep range for your training goal.
+            </li>
+
+            <li>
+                <strong>Progressive Overload:</strong>
+                Gradually increase weight, repetitions or
+                training difficulty as your strength improves.
+            </li>
+
+            <li>
+                <strong>Rest:</strong>
+                Take adequate rest between heavy sets,
+                especially for compound exercises.
+            </li>
+
+            <li>
+                <strong>Technique:</strong>
+                Always prioritize proper form and controlled
+                movement instead of lifting excessive weight.
+            </li>
+
+            <li>
+                <strong>Recovery:</strong>
+                Give your muscles enough time to recover
+                between demanding training sessions.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <a href="workouts.html" class="back-button">
+        ← Back to Workouts
+    </a>
+    <button class="back-button" onclick="completeWorkoutPage('Strength Training')">
+        ✅ Mark Workout Complete
+    </button>
+</section>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <h2>Fit<span>X</span></h2>
+
+    <p>
+        Train Hard. Stay Strong. Live Better.
+    </p>
+
+    <p class="copyright">
+        ©️ 2026 FitX. All Rights Reserved.
+    </p>
+
+</footer>
+
+<script>
+    // Login protection
+    if (localStorage.getItem("fitxLoggedIn") !== "true") {
+        alert("🔐 Please login or create an account to access this workout.");
+        window.location.href = "login.html";
+    }
+    function completeWorkoutPage(workoutName) {
+
+        let startDate =
+            localStorage.getItem("fitxWorkout90StartDate");
+
+        if (!startDate) {
+
+            const d = new Date();
+
+            startDate =
+                d.getFullYear() + "-" +
+                String(d.getMonth() + 1).padStart(2, "0") + "-" +
+                String(d.getDate()).padStart(2, "0");
+
+            localStorage.setItem(
+                "fitxWorkout90StartDate",
+                startDate
+            );
+
+            localStorage.setItem(
+                "fitxWorkout90Count",
+                "0"
+            );
+
+            localStorage.setItem(
+                "fitxWorkout90History",
+                JSON.stringify([])
+            );
+        }
+
+
+        let totalCount =
+            parseInt(
+                localStorage.getItem("fitxWorkout90Count")
+            ) || 0;
+
+        totalCount++;
+
+        localStorage.setItem(
+            "fitxWorkout90Count",
+            totalCount
+        );
+
+
+        let weeklyCount =
+            parseInt(
+                localStorage.getItem("fitxWorkoutWeeklyCount")
+            ) || 0;
+
+        weeklyCount++;
+
+        localStorage.setItem(
+            "fitxWorkoutWeeklyCount",
+            weeklyCount
+        );
+
+
+        let history =
+            JSON.parse(
+                localStorage.getItem("fitxWorkout90History")
+            ) || [];
+
+
+        let today =
+            new Date().toLocaleDateString();
+
+
+        history.push({
+
+            workout: workoutName,
+
+            date: today
+
+        });
+
+
+        localStorage.setItem(
+            "fitxWorkout90History",
+            JSON.stringify(history)
+        );
+
+
+        alert(
+            workoutName +
+            " workout completed! 💪"
+        );
+
+
+        window.location.href =
+            "workouts.html";
+    }
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitX - Muscle Gain Diet</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        .diet-page {
+            width: 90%;
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+        .diet-page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .diet-page-header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .diet-page-header h1 span {
+            color: #39ff14;
+        }
+
+        .diet-page-header p {
+            color: #bdbdbd;
+            font-size: 16px;
+        }
+
+        .diet-groups {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .diet-card {
+            background: #151515;
+            border: 1px solid #292929;
+            border-radius: 12px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .diet-card:hover {
+            transform: translateY(-5px);
+            border-color: #39ff14;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.15);
+        }
+
+        .diet-card h2 {
+            color: #39ff14;
+            margin-bottom: 20px;
+        }
+
+        .diet-card ul {
+            padding-left: 20px;
+            color: #bdbdbd;
+            line-height: 2;
+        }
+
+        .diet-guidelines {
+            margin-top: 50px;
+            background: #151515;
+            border: 1px solid #292929;
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .diet-guidelines h2 {
+            color: #39ff14;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .diet-guidelines ul {
+            color: #bdbdbd;
+            line-height: 2;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 40px auto;
+            padding: 10px 20px;
+            background: #39ff14;
+            color: #000;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .back-button:hover {
+            background: transparent;
+            color: #39ff14;
+            border: 1px solid #39ff14;
+        }
+
+        @media (max-width: 800px) {
+
+            .diet-groups {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+
+<nav>
+
+    <h2 class="logo">
+        Fit<span>X</span>
+    </h2>
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+        <a href="workouts.html">Workouts</a>
+        <a href="diet-plans.html">Diet Plans</a>
+        <a href="membership.html">Membership</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+    <a href="login.html">
+        <button class="login-btn">Login</button>
+    </a>
+
+</nav>
+
+
+<!-- Muscle Gain Diet Page -->
+
+<section class="diet-page">
+
+    <div class="diet-page-header">
+
+        <h1>💪 <span>Muscle Gain Diet</span></h1>
+
+        <p>
+            Fuel your training with protein-rich foods,
+            balanced meals and enough energy for recovery.
+        </p>
+
+    </div>
+
+
+    <div class="diet-groups">
+
+
+        <!-- Breakfast -->
+
+        <div class="diet-card">
+
+            <h2>🌅 Breakfast</h2>
+
+            <ul>
+
+                <li>Oats with milk and banana</li>
+                <li>Egg omelette</li>
+                <li>Whole-grain dosa</li>
+                <li>Idli with sambar</li>
+                <li>Peanut butter toast</li>
+                <li>Greek yogurt with fruits</li>
+                <li>Paneer sandwich</li>
+                <li>Poha with peanuts</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Lunch -->
+
+        <div class="diet-card">
+
+            <h2>🍱 Lunch</h2>
+
+            <ul>
+
+                <li>Rice with dal</li>
+                <li>Chicken with rice</li>
+                <li>Fish with rice</li>
+                <li>Roti with paneer</li>
+                <li>Chicken biryani with salad</li>
+                <li>Vegetable pulao</li>
+                <li>Curd</li>
+                <li>Mixed vegetables</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Protein -->
+
+        <div class="diet-card">
+
+            <h2>🥚 Protein Sources</h2>
+
+            <ul>
+
+                <li>Eggs</li>
+                <li>Chicken</li>
+                <li>Fish</li>
+                <li>Paneer</li>
+                <li>Milk</li>
+                <li>Greek yogurt</li>
+                <li>Dal</li>
+                <li>Chickpeas</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Snacks -->
+
+        <div class="diet-card">
+
+            <h2>🥜 Muscle-Building Snacks</h2>
+
+            <ul>
+
+                <li>Peanuts</li>
+                <li>Almonds</li>
+                <li>Cashews</li>
+                <li>Peanut butter toast</li>
+                <li>Greek yogurt</li>
+                <li>Boiled eggs</li>
+                <li>Banana with milk</li>
+                <li>Roasted chana</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Dinner -->
+
+        <div class="diet-card">
+
+            <h2>🌙 Dinner</h2>
+
+            <ul>
+
+                <li>Chicken with rice</li>
+                <li>Fish with vegetables</li>
+                <li>Paneer with roti</li>
+                <li>Egg omelette</li>
+                <li>Dal with rice</li>
+                <li>Chicken with roti</li>
+                <li>Vegetable khichdi</li>
+                <li>Curd with vegetables</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Recovery -->
+
+        <div class="diet-card">
+
+            <h2>🥛 Recovery Foods</h2>
+
+            <ul>
+
+                <li>Milk</li>
+                <li>Curd</li>
+                <li>Greek yogurt</li>
+                <li>Eggs</li>
+                <li>Banana</li>
+                <li>Paneer</li>
+                <li>Chicken</li>
+                <li>Fish</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- Diet Guidelines -->
+
+    <div class="diet-guidelines">
+
+        <h2>💪 Muscle Gain Diet Guidelines</h2>
+
+        <ul>
+
+            <li>
+                <strong>Protein:</strong>
+                Include a protein-rich food in each main meal
+                to support muscle growth and recovery.
+            </li>
+
+            <li>
+                <strong>Calories:</strong>
+                Muscle gain generally requires enough total
+                energy to support training and recovery.
+            </li>
+
+            <li>
+                <strong>Carbohydrates:</strong>
+                Include nutritious carbohydrate sources such
+                as rice, oats, potatoes and whole grains.
+            </li>
+
+            <li>
+                <strong>Healthy Fats:</strong>
+                Include foods such as nuts, seeds, peanuts
+                and other nutritious fat sources.
+            </li>
+
+            <li>
+                <strong>Hydration:</strong>
+                Drink enough water throughout the day,
+                especially around workouts.
+            </li>
+
+            <li>
+                <strong>Consistency:</strong>
+                Combine a balanced diet with progressive
+                resistance training and adequate recovery.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <a href="diet-plans.html" class="back-button">
+        ← Back to Diet Plans
+    </a>
+
+</section>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <h2>Fit<span>X</span></h2>
+
+    <p>
+        Train Hard. Stay Strong. Live Better.
+    </p>
+
+    <p class="copyright">
+        ©️ 2026 FitX. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

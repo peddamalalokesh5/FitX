@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - FitX</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+    <div class="logo">
+        Fit<span>X</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="workouts.html">Workouts</a>
+        <a href="diet-plans.html">Diet Plans</a>
+        <a href="membership.html">Membership</a>
+    </div>
+
+    <a href="login.html">
+        <button class="login-btn">Login</button>
+    </a>
+</nav>
+
+
+<!-- Signup Section -->
+<section class="signup-section">
+
+    <div class="signup-box">
+
+        <p class="small-title">JOIN FITX</p>
+
+        <h1>Create <span>Account</span></h1>
+
+        <p class="signup-subtitle">
+            Start your fitness journey with FitX
+        </p>
+
+
+        <form id="signupForm">
+
+            <!-- Full Name -->
+            <div class="input-group">
+                <label for="name">Full Name</label>
+                <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your full name"
+                        required
+                >
+            </div>
+
+
+            <!-- Email -->
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                >
+            </div>
+
+
+            <!-- Phone -->
+            <div class="input-group">
+                <label for="phone">Phone Number</label>
+                <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Enter your phone number"
+                        required
+                >
+            </div>
+
+
+            <!-- Password -->
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input
+                        type="password"
+                        id="password"
+                        placeholder="Create a password"
+                        required
+                >
+            </div>
+
+
+            <!-- Confirm Password -->
+            <div class="input-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input
+                        type="password"
+                        id="confirm-password"
+                        placeholder="Confirm your password"
+                        required
+                >
+            </div>
+
+
+            <!-- Terms -->
+            <div class="signup-terms">
+                <label>
+                    <input type="checkbox" required>
+                    I agree to the Terms & Conditions
+                </label>
+            </div>
+
+
+            <!-- Create Account Button -->
+            <button type="submit" class="signup-submit">
+                Create Account
+            </button>
+
+        </form>
+
+
+        <!-- Login Link -->
+        <p class="login-text">
+            Already have an account?
+            <a href="login.html">Login here</a>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- Footer -->
+<footer>
+
+    <h2>Fit<span>X</span></h2>
+
+    <p>
+        Train Hard. Eat Smart. Live Strong.
+    </p>
+
+    <p class="copyright">
+        © 2026 FitX. All Rights Reserved.
+    </p>
+
+</footer>
+<script>
+    document.getElementById("signupForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirm-password").value;
+
+        if (password !== confirmPassword) {
+            alert("Passwords do not match!");
+            return;
+        }
+        localStorage.setItem("fitxName", name);
+        localStorage.setItem("fitxEmail", email);
+        localStorage.setItem("fitxPassword", password);
+
+        const selectedPlan = localStorage.getItem("fitxMembership");
+
+        if (selectedPlan) {
+            localStorage.setItem("fitxMembership", selectedPlan);
+        }
+
+        alert("Account created successfully!");
+
+        window.location.href = "login.html";
+    });
+</script>
+
+</body>
+</html>

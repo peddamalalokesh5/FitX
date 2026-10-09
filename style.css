@@ -1,0 +1,2023 @@
+/* ================================
+   FITX - MAIN STYLES
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0b0b0b;
+    color: white;
+}
+
+/* ================================
+   NAVIGATION
+================================ */
+
+nav {
+    height: 80px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #0b0b0b;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo span,
+h1 span,
+h2 span {
+    color: #39ff14;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #39ff14;
+}
+
+.login-btn {
+    padding: 11px 25px;
+    border: 1px solid #39ff14;
+    background: transparent;
+    color: #39ff14;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: #39ff14;
+    color: black;
+}
+
+
+/* ================================
+   HERO SECTION
+================================ */
+
+.hero {
+    min-height: 620px;
+    padding: 70px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    background: linear-gradient(
+            90deg,
+            #0b0b0b 40%,
+            #111111 100%
+    );
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.small-title {
+    color: #39ff14;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 64px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero-text {
+    color: #bdbdbd;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+.hero-buttons {
+    display: flex;
+    gap: 18px;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+/* Get Started */
+.primary-btn {
+    background: #39ff14;
+    color: #000;
+    border: 2px solid #39ff14;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.25);
+}
+
+.primary-btn:hover {
+    background: transparent;
+    color: #39ff14;
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(57, 255, 20, 0.45);
+}
+
+/* Explore Workouts */
+.secondary-btn {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #555;
+}
+
+.secondary-btn:hover {
+    background: #39ff14;
+    color: #000;
+    border-color: #39ff14;
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.35);
+}
+
+.hero-image {
+    width: 48%;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+/* ================================
+   FEATURES
+================================ */
+
+.features {
+    padding: 80px 7%;
+    text-align: center;
+    background: #111111;
+}
+
+.features > h2 {
+    font-size: 38px;
+    margin-bottom: 45px;
+}
+
+.feature-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.feature-card {
+    width: 31%;
+    padding: 35px 25px;
+    background: #181818;
+    border: 1px solid #292929;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    border-color: #39ff14;
+}
+
+.feature-card h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.feature-card p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    padding: 50px 20px;
+    text-align: center;
+    background: #070707;
+}
+
+footer h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #999;
+}
+
+.copyright {
+    margin-top: 25px;
+    font-size: 13px;
+}
+
+
+/* ================================
+   MOBILE RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .feature-container {
+        flex-direction: column;
+    }
+
+    .feature-card {
+        width: 100%;
+    }
+}
+/* ================================
+   WORKOUTS PAGE
+================================ */
+
+.page-header {
+    text-align: center;
+    padding: 80px 20px 50px;
+    background: #0b0b0b;
+}
+
+.page-header h1 {
+    font-size: 50px;
+    margin: 15px 0;
+}
+
+.page-header p:not(.small-title) {
+    color: #999;
+    font-size: 17px;
+    max-width: 600px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+
+/* Workout Cards */
+
+.workouts {
+    padding: 30px 7% 90px;
+    background: #0b0b0b;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.workout-card {
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 12px;
+    padding: 35px 30px;
+
+    min-height: 280px;
+
+    transition: 0.3s;
+}
+
+.workout-card:hover {
+    transform: translateY(-8px);
+    border-color: #39ff14;
+    box-shadow: 0 10px 30px rgba(57, 255, 20, 0.08);
+}
+
+.workout-icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.workout-card h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.workout-card p {
+    color: #999;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.workout-card button {
+    background: #39ff14;
+    color: black;
+
+    border: none;
+    border-radius: 6px;
+
+    padding: 11px 20px;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.workout-card button:hover {
+    background: white;
+}
+
+
+/* ================================
+   WORKOUTS MOBILE
+================================ */
+
+@media (max-width: 900px) {
+
+    .workouts {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header h1 {
+        font-size: 40px;
+    }
+}
+/* ================================
+   DIET PLANS PAGE
+================================ */
+
+.diet-plans {
+    padding: 30px 7% 90px;
+    background: #0b0b0b;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.diet-card {
+    position: relative;
+
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 12px;
+
+    padding: 40px 30px;
+
+    transition: 0.3s;
+}
+
+.diet-card:hover {
+    transform: translateY(-8px);
+    border-color: #39ff14;
+    box-shadow: 0 10px 30px rgba(57, 255, 20, 0.08);
+}
+
+.diet-icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.diet-card h2 {
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.diet-card p {
+    color: #999;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.diet-card ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.diet-card li {
+    color: #ccc;
+    margin-bottom: 12px;
+}
+
+.diet-card li::before {
+    content: "✓";
+    color: #39ff14;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.diet-card button {
+    background: #39ff14;
+    color: black;
+
+    border: none;
+    border-radius: 6px;
+
+    padding: 12px 22px;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.diet-card button:hover {
+    background: white;
+}
+
+
+/* Popular Plan */
+
+.diet-card.featured {
+    border-color: #39ff14;
+}
+
+.popular {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    background: #39ff14;
+    color: black;
+
+    padding: 5px 10px;
+
+    border-radius: 4px;
+
+    font-size: 11px;
+    font-weight: bold;
+}
+
+
+/* Mobile */
+
+@media (max-width: 900px) {
+
+    .diet-plans {
+        grid-template-columns: 1fr;
+    }
+}
+/* ================================
+   MEMBERSHIP PAGE
+================================ */
+
+.membership-plans {
+    padding: 30px 7% 90px;
+    background: #0b0b0b;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.membership-card {
+    position: relative;
+
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 12px;
+
+    padding: 40px 30px;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.membership-card:hover {
+    transform: translateY(-8px);
+    border-color: #39ff14;
+    box-shadow: 0 10px 30px rgba(57, 255, 20, 0.08);
+}
+
+.membership-card h2 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.plan-description {
+    color: #999;
+    margin-bottom: 25px;
+}
+
+.price {
+    color: #39ff14;
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.price span {
+    color: #888;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.membership-card ul {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.membership-card li {
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.membership-card li::before {
+    content: "✓";
+    color: #39ff14;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.membership-card button {
+    width: 100%;
+
+    padding: 13px;
+
+    background: #39ff14;
+    color: black;
+
+    border: none;
+    border-radius: 6px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.membership-card button:hover {
+    background: white;
+}
+
+
+/* Popular Membership */
+
+.featured-plan {
+    border: 2px solid #39ff14;
+    transform: scale(1.03);
+}
+
+.featured-plan:hover {
+    transform: scale(1.03) translateY(-8px);
+}
+
+
+/* Mobile */
+
+@media (max-width: 900px) {
+
+    .membership-plans {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-plan {
+        transform: none;
+    }
+
+    .featured-plan:hover {
+        transform: translateY(-8px);
+    }
+}
+/* ================================
+   LOGIN PAGE
+================================ */
+
+.login-section {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px 20px;
+
+    background:
+            radial-gradient(
+                    circle at center,
+                    #151515 0%,
+                    #0b0b0b 65%
+            );
+}
+
+.login-box {
+    width: 100%;
+    max-width: 450px;
+
+    padding: 45px 40px;
+
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 14px;
+
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+}
+
+.login-box .small-title {
+    text-align: center;
+}
+
+.login-box h1 {
+    text-align: center;
+    font-size: 35px;
+    margin: 10px 0;
+}
+
+.login-subtitle {
+    text-align: center;
+    color: #999;
+    margin-bottom: 35px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    color: #ddd;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 13px 15px;
+
+    background: #0b0b0b;
+    color: white;
+
+    border: 1px solid #333;
+    border-radius: 6px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #39ff14;
+}
+
+.input-group input::placeholder {
+    color: #666;
+}
+
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 5px 0 25px;
+
+    font-size: 13px;
+}
+
+.login-options label {
+    color: #999;
+}
+
+.login-options input {
+    accent-color: #39ff14;
+}
+
+.login-options a {
+    color: #39ff14;
+    text-decoration: none;
+}
+
+.login-options a:hover {
+    text-decoration: underline;
+}
+
+.login-submit {
+    width: 100%;
+    padding: 14px;
+
+    background: #39ff14;
+    color: black;
+
+    border: none;
+    border-radius: 6px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.login-submit:hover {
+    background: white;
+}
+
+.signup-text {
+    text-align: center;
+    color: #888;
+
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.signup-text a {
+    color: #39ff14;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* Login mobile */
+
+@media (max-width: 600px) {
+
+    .login-box {
+        padding: 35px 25px;
+    }
+
+    .login-box h1 {
+        font-size: 30px;
+    }
+}
+/* ================================
+   SIGNUP PAGE
+================================ */
+
+.signup-section {
+    min-height: 750px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    background:
+            radial-gradient(
+                    circle at center,
+                    #151515 0%,
+                    #0b0b0b 65%
+            );
+}
+
+.signup-box {
+    width: 100%;
+    max-width: 500px;
+    padding: 45px 40px;
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 14px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+}
+
+.signup-box .small-title {
+    text-align: center;
+}
+
+.signup-box h1 {
+    text-align: center;
+    font-size: 35px;
+    margin: 10px 0;
+}
+
+.signup-subtitle {
+    text-align: center;
+    color: #999;
+    margin-bottom: 30px;
+}
+
+.signup-terms {
+    margin: 5px 0 25px;
+    font-size: 13px;
+}
+
+.signup-terms label {
+    color: #999;
+}
+
+.signup-terms input {
+    accent-color: #39ff14;
+    margin-right: 7px;
+}
+
+.signup-submit {
+    width: 100%;
+    padding: 14px;
+    background: #39ff14;
+    color: black;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.signup-submit:hover {
+    background: white;
+}
+
+.login-text {
+    text-align: center;
+    color: #888;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.login-text a {
+    color: #39ff14;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .signup-box {
+        padding: 35px 25px;
+    }
+
+    .signup-box h1 {
+        font-size: 30px;
+    }
+
+}
+/* ================================
+   ABOUT PAGE
+================================ */
+
+.about-section {
+    padding: 80px 7%;
+    background: #0b0b0b;
+}
+
+.about-content {
+    max-width: 850px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.about-content h2 {
+    font-size: 38px;
+    margin: 15px 0 25px;
+}
+
+.about-content p:not(.small-title) {
+    color: #999;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.about-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.about-card {
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 12px;
+    padding: 35px 25px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.about-card:hover {
+    transform: translateY(-8px);
+    border-color: #39ff14;
+    box-shadow: 0 10px 30px rgba(57, 255, 20, 0.08);
+}
+
+.about-icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.about-card h3 {
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.about-card p {
+    color: #999;
+    line-height: 1.6;
+}
+
+.mission-section {
+    padding: 80px 20px;
+    text-align: center;
+    background: #111111;
+}
+
+.mission-section h2 {
+    font-size: 38px;
+    margin: 15px 0 20px;
+}
+
+.mission-section > p:last-child {
+    color: #999;
+    font-size: 17px;
+}
+
+
+/* Mobile */
+@media (max-width: 900px) {
+
+    .about-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .about-content h2,
+    .mission-section h2 {
+        font-size: 32px;
+    }
+}
+/* ================================
+   CONTACT PAGE
+================================ */
+
+.contact-section {
+    padding: 70px 7% 90px;
+    background: #0b0b0b;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.contact-info {
+    padding-top: 20px;
+}
+
+.contact-info h2 {
+    font-size: 38px;
+    margin: 15px 0 25px;
+    line-height: 1.2;
+}
+
+.contact-description {
+    color: #999;
+    line-height: 1.7;
+    margin-bottom: 35px;
+    max-width: 500px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 8px;
+    font-size: 22px;
+}
+
+.contact-item h3 {
+    margin-bottom: 6px;
+    font-size: 18px;
+}
+
+.contact-item p {
+    color: #999;
+    line-height: 1.5;
+}
+
+
+/* Contact Form */
+
+.contact-form-box {
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 14px;
+    padding: 40px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
+}
+
+.contact-form-box h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.contact-form-box textarea {
+    width: 100%;
+    padding: 13px 15px;
+    background: #0b0b0b;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 6px;
+    outline: none;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    resize: vertical;
+    transition: 0.3s;
+}
+
+.contact-form-box textarea:focus {
+    border-color: #39ff14;
+}
+
+.contact-form-box textarea::placeholder {
+    color: #666;
+}
+
+.contact-submit {
+    width: 100%;
+    padding: 14px;
+    background: #39ff14;
+    color: black;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-submit:hover {
+    background: white;
+}
+
+
+/* Mobile */
+
+@media (max-width: 900px) {
+
+    .contact-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-info h2 {
+        font-size: 32px;
+    }
+
+    .contact-form-box {
+        padding: 30px 25px;
+    }
+}
+.dashboard-section {
+    min-height: 620px;
+    padding: 70px 7%;
+    background: #0b0b0b;
+}
+
+.dashboard-box {
+    max-width: 1250px;
+    width:100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.dashboard-box h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.dashboard-subtitle {
+    color: #bdbdbd;
+    font-size: 18px;
+    margin-bottom: 45px;
+}
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    width:85%;
+    margin:40px auto 50px;
+    align-items: stretch;
+}
+.dashboard-card {
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 12px;
+    padding: 25px;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-8px);
+    border-color: #39ff14;
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.15);
+}
+
+.dashboard-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.dashboard-card p {
+    color: #bdbdbd;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.dashboard-card a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #39ff14;
+    color: #000;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.dashboard-card a:hover {
+    background: transparent;
+    color: #39ff14;
+    border: 1px solid #39ff14;
+}
+.summary-section {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    grid-column:1/ -1;
+    width:100%;
+    max-width:1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.summary-section h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+
+}
+
+.summary-card {
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.summary-card:hover {
+    transform: translateY(-5px);
+    border-color: #39ff14;
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.15);
+}
+
+.summary-card h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.summary-card p {
+    color: #39ff14;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.summary-card span {
+    color: #bdbdbd;
+    font-size: 14px;
+}
+.profile-card {
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 40px;
+}
+
+.profile-card h2 {
+    margin-bottom: 20px;
+}
+
+.profile-card p {
+    margin: 10px 0;
+    color: #bdbdbd;
+}
+.progress-section {
+    margin-bottom: 50px;
+}
+
+.progress-section h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.progress-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.progress-card {
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.progress-card:hover {
+    transform: translateY(-5px);
+    border-color: #39ff14;
+}
+
+.progress-card h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.progress-card p {
+    color: #39ff14;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.progress-card span {
+    color: #bdbdbd;
+    font-size: 14px;
+}
+.change-btn {
+    margin-top: 15px;
+    padding: 8px 18px;
+    border: 1px solid #39ff14;
+    background: #39ff14;
+    color: #000;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.change-btn:hover {
+    background: transparent;
+    color: #39ff14;
+}
+.target-divider {
+    border: none;
+    border-top: 1px solid #292929;
+    margin: 20px 0;
+}
+.bmi-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 60px auto 50px;
+}
+
+.bmi-section h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.bmi-card {
+    width: 260px;
+    min-height: 200px;
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.bmi-card:hover {
+    transform: translateY(-5px);
+    border-color: #39ff14;
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.15);
+}
+
+.bmi-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.bmi-card p {
+    color: #39ff14;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.bmi-card span {
+    display: block;
+    color: #bdbdbd;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.profile-photo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0 25px;
+}
+
+#profilePhoto {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #39ff14;
+    background: #222;
+    margin-bottom: 15px;
+}
+
+#profilePhotoInput {
+    max-width: 220px;
+    color: #bdbdbd;
+    font-size: 14px;
+}
+.choose-plan-btn {
+    margin-top: 20px;
+    padding: 10px 22px;
+    background: #39ff14;
+    color: #000;
+    border: 1px solid #39ff14;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.choose-plan-btn:hover {
+    background: transparent;
+    color: #39ff14;
+}
+/* Membership Details */
+
+.membership-details {
+    width: 85%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.membership-details:hover {
+    transform: translateY(-5px);
+    border-color: #39ff14;
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.15);
+}
+
+.membership-details h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.membership-details p {
+    color: #bdbdbd;
+    font-size: 17px;
+    margin: 12px 0;
+}
+
+.membership-details span {
+    color: #39ff14;
+    font-weight: bold;
+}
+.plan-option {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px;
+    background: #222;
+    color: #39ff14;
+    border: 1px solid #39ff14;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.plan-option:hover {
+    background: #39ff14;
+    color: #000;
+}
+/* Workout Progress */
+
+.workout-progress {
+    width: 85%;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.workout-progress h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.workout-progress p {
+    color: #bdbdbd;
+    font-size: 17px;
+    margin: 12px 0;
+}
+
+.workout-progress strong {
+    color: #39ff14;
+    font-size: 20px;
+}
+/* Workout Progress Bar */
+
+.progress-bar {
+    width: 80%;
+    height: 14px;
+    background: #292929;
+    border-radius: 10px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+#workoutProgressFill {
+    width: 0%;
+    height: 100%;
+    background: #39ff14;
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
+/* Workout History */
+
+.workout-history {
+    width: 85%;
+    max-width: 900px;
+    margin: 40px auto 50px;
+    padding: 30px;
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.workout-history h2 {
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    margin: 10px 0;
+    background: #1d1d1d;
+    border-radius: 8px;
+}
+
+.history-workout {
+    font-weight: bold;
+}
+
+.history-date {
+    color: #bdbdbd;
+}
+
+.history-status {
+    color: #39ff14;
+    font-weight: bold;
+}
+/* Workout Target */
+
+#targetSelect {
+    margin-left: 8px;
+    padding: 6px 12px;
+    background: #1d1d1d;
+    color: #39ff14;
+    border: 1px solid #39ff14;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* Diet Progress */
+
+.diet-progress {
+    width: 85%;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.diet-progress h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.diet-progress p {
+    color: #bdbdbd;
+    font-size: 17px;
+    margin: 12px 0;
+}
+
+.diet-progress strong {
+    color: #39ff14;
+    font-size: 20px;
+}
+/* Water Progress */
+
+#waterProgressFill {
+    width: 0%;
+    height: 100%;
+    background: #39ff14;
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
+/* Calorie Progress */
+
+#calorieProgressFill {
+    width: 0%;
+    height: 100%;
+    background: #39ff14;
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
+#proteinProgressFill {
+    width: 0%;
+    height: 100%;
+    background: #39ff14;
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
+/* 90-Day Workout Progress */
+#workout90ProgressFill {
+    width: 0%;
+    height: 100%;
+    background: #39ff14;
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
+.weight-progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.weight-progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #4CAF50;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+#weightProgressPercent {
+    margin-top: 8px;
+    font-weight: bold;
+}
+.weight-progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.weight-progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #4CAF50;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+#weightProgressPercent {
+    margin-top: 8px;
+    font-weight: bold;
+}
+.workout-progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.workout-progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #4CAF50;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+#workoutProgressPercent {
+    margin-top: 8px;
+    font-weight: bold;
+}
+.water-progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.water-progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #4CAF50;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+#waterProgressPercent {
+    margin-top: 8px;
+    font-weight: bold;
+}
+/* Dashboard Progress Layout */
+
+.top-progress-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.bottom-progress-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+/* Hero Stats */
+
+.hero-stats {
+    display: flex;
+    gap: 35px;
+    margin-top: 35px;
+}
+
+.hero-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hero-stat strong {
+    font-size: 24px;
+    color: #39ff14;
+}
+
+.hero-stat span {
+    font-size: 14px;
+    color: #777;
+}
+/* Feature Buttons */
+
+.feature-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 18px;
+    background: #39ff14;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.feature-btn:hover {
+    background: #2edb10;
+    transform: translateY(-2px);
+}
+/* Home CTA Section */
+
+.home-cta {
+    text-align: center;
+    padding: 70px 20px;
+    margin-top: 40px;
+}
+
+.home-cta h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.home-cta h2 span {
+    color: #39ff14;
+}
+
+.home-cta p {
+    color: #777;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #39ff14;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px);
+}
+/* Home Page Mobile Improvements */
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 45px 20px;
+        gap: 35px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 220px;
+    }
+
+    .hero-stats {
+        justify-content: center;
+        gap: 25px;
+        margin-top: 30px;
+    }
+
+    .hero-stat strong {
+        font-size: 21px;
+    }
+
+    .hero-stat span {
+        font-size: 13px;
+    }
+
+    .hero-image img {
+        height: 350px;
+    }
+
+    .features {
+        padding: 60px 20px;
+    }
+
+    .features > h2 {
+        font-size: 30px;
+    }
+
+    .feature-card {
+        padding: 30px 20px;
+    }
+
+    .home-cta {
+        padding: 55px 20px;
+    }
+
+    .home-cta h2 {
+        font-size: 27px;
+    }
+
+}
+/* Selected Workout Card */
+.workout-card.selected-workout {
+    border: 2px solid #39ff14;
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.35);
+    transform: translateY(-5px);
+}
+/* Workout History */
+.workout-history {
+    width: 90%;
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #111;
+    border-radius: 12px;
+}
+
+.workout-history h2 {
+    margin-bottom: 25px;
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    background: #181818;
+    border: 1px solid #292929;
+    border-radius: 8px;
+}
+
+.history-workout {
+    font-weight: bold;
+    color: #fff;
+}
+
+.history-date {
+    color: #aaa;
+}
+
+.history-status {
+    color: #39ff14;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+
+    .workout-history {
+        width: 85%;
+        padding: 20px;
+    }
+
+    .history-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+/* Selected Workout Indicator */
+.workout-card.selected-workout::after {
+    content: "✓ Selected";
+    display: block;
+    margin-top: 15px;
+    color: #39ff14;
+    font-weight: bold;
+    font-size: 14px;
+}
+/* Clear Workout History Button */
+.clear-history-btn {
+    margin-top: 20px;
+    padding: 10px 18px;
+    background: #222;
+    color: #ff5555;
+    border: 1px solid #ff5555;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.clear-history-btn:hover {
+    background: #ff5555;
+    color: #fff;
+}
+/* Workout Streak */
+
+.workout-streak {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #111;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.workout-streak h2 {
+    margin-bottom: 20px;
+}
+
+.streak-number {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.streak-number span:first-child {
+    font-size: 48px;
+    font-weight: bold;
+    color: #39ff14;
+}
+
+.streak-number span:last-child {
+    font-size: 18px;
+    color: #aaa;
+}
+
+#streakMessage {
+    color: #aaa;
+}
+/* 90-Day Challenge */
+
+.challenge-status {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #111;
+    border: 1px solid #292929;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.challenge-status h2 {
+    margin-bottom: 20px;
+}
+
+.challenge-status p {
+    margin: 10px 0;
+    color: #aaa;
+}
+
+.challenge-status strong {
+    color: #39ff14;
+    font-size: 20px;
+}

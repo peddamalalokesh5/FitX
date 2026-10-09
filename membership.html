@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitX - Membership</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav>
+    <h2 class="logo">
+        Fit<span>X</span>
+    </h2>
+
+    <div class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="./workouts.html">Workouts</a>
+        <a href="./diet-plans.html">Diet Plans</a>
+        <a href="./membership.html">Membership</a>
+        <a href="./about.html">About</a>
+        <a href="./contact.html">Contact</a>
+    </div>
+
+    <button class="login-btn">Login</button>
+</nav>
+
+
+<!-- Page Header -->
+<section class="page-header">
+
+    <p class="small-title">FITX MEMBERSHIP</p>
+
+    <h1>
+        Choose Your <span>Plan</span>
+    </h1>
+
+    <p>
+        Select the membership that fits your goals
+        and start your transformation today.
+    </p>
+
+</section>
+
+
+<!-- Membership Plans -->
+<!-- Membership Plans -->
+<section class="membership-plans">
+
+    <!-- BASIC -->
+    <div class="membership-card">
+
+        <h2>Basic</h2>
+
+        <p class="plan-description">
+            A simple plan to get started.
+        </p>
+
+        <ul>
+            <li>Gym access</li>
+            <li>Basic workout plans</li>
+            <li>Basic diet guidance</li>
+            <li>Progress tracking</li>
+        </ul>
+
+        <label>Choose Duration</label>
+
+        <select id="basicDuration" class="membership-duration">
+            <option value="1">1 Month - ₹999</option>
+            <option value="3">3 Months - ₹1,999</option>
+            <option value="6">6 Months - ₹3,999</option>
+        </select>
+
+        <button
+                class="choose-plan-btn"
+                onclick="selectPlan('Basic')">
+            Join Now
+        </button>
+
+    </div>
+
+
+    <!-- PRO -->
+    <div class="membership-card featured-plan">
+
+        <div class="popular">MOST POPULAR</div>
+
+        <h2>Pro</h2>
+
+        <p class="plan-description">
+            Everything you need to level up.
+        </p>
+
+        <ul>
+            <li>Everything in Basic</li>
+            <li>Personalized workout plans</li>
+            <li>Personalized diet plans</li>
+            <li>Trainer guidance</li>
+            <li>Advanced progress tracking</li>
+        </ul>
+
+        <label>Choose Duration</label>
+
+        <select id="proDuration" class="membership-duration">
+            <option value="1">1 Month - ₹1,999</option>
+            <option value="3">3 Months - ₹2,999</option>
+            <option value="6">6 Months - ₹4,999</option>
+        </select>
+
+        <button
+                class="choose-plan-btn"
+                onclick="selectPlan('Pro')">
+            Join Now
+        </button>
+
+    </div>
+
+
+    <!-- ELITE -->
+    <div class="membership-card">
+
+        <h2>Elite</h2>
+
+        <p class="plan-description">
+            Premium support for serious results.
+        </p>
+
+        <ul>
+            <li>Everything in Pro</li>
+            <li>One-on-one trainer</li>
+            <li>Custom nutrition plan</li>
+            <li>Weekly progress review</li>
+            <li>Priority support</li>
+        </ul>
+
+        <label>Choose Duration</label>
+
+        <select id="eliteDuration" class="membership-duration">
+            <option value="1">1 Month - ₹2,999</option>
+            <option value="3">3 Months - ₹3,999</option>
+            <option value="6">6 Months - ₹5,999</option>
+        </select>
+
+        <button
+                class="choose-plan-btn"
+                onclick="selectPlan('Elite')">
+            Join Now
+        </button>
+
+    </div>
+
+</section>
+<!-- Footer -->
+<footer>
+
+    <h2>Fit<span>X</span></h2>
+
+    <p>
+        Train Hard. Stay Strong. Live Better.
+    </p>
+
+    <p class="copyright">
+        © 2026 FitX. All Rights Reserved.
+    </p>
+
+</footer>
+<script>
+
+    // Login protection
+    if (localStorage.getItem("fitxLoggedIn") !== "true") {
+        alert("🔐 Please login or create an account to access FitX Membership.");
+        window.location.href = "login.html";
+    }
+
+    function getMembershipPrice(plan, duration) {
+
+        const prices = {
+
+            Basic: {
+                1: 999,
+                3: 1999,
+                6: 3999
+            },
+
+            Pro: {
+                1: 1999,
+                3: 2999,
+                6: 4999
+            },
+
+            Elite: {
+                1: 2999,
+                3: 3999,
+                6: 5999
+            }
+
+        };
+
+        return prices[plan][duration];
+    }
+
+
+    function selectPlan(plan) {
+
+        let duration;
+
+        if (plan === "Basic") {
+            duration =
+                document.getElementById("basicDuration").value;
+        }
+
+        if (plan === "Pro") {
+            duration =
+                document.getElementById("proDuration").value;
+        }
+
+        if (plan === "Elite") {
+            duration =
+                document.getElementById("eliteDuration").value;
+        }
+
+
+        const price =
+            getMembershipPrice(plan, duration);
+
+
+        localStorage.setItem(
+            "fitxMembership",
+            plan
+        );
+
+        localStorage.setItem(
+            "fitxMembershipDuration",
+            duration
+        );
+
+        localStorage.setItem(
+            "fitxMembershipPrice",
+            price
+        );
+
+
+        const loggedInUser =
+            localStorage.getItem("fitxName");
+
+
+        if (loggedInUser) {
+
+            window.location.href =
+                "checkout.html";
+
+        } else {
+
+            alert(
+                "Please create your FitX account before continuing."
+            );
+
+            window.location.href =
+                "signup.html";
+        }
+
+    }
+
+</script>
+
+</script>
+
+</body>
+</html>

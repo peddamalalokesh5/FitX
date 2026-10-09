@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0">
+
+    <title>FitX - Membership Confirmation</title>
+
+    <link
+            rel="stylesheet"
+            href="css/style.css">
+
+</head>
+
+
+<body>
+
+<nav>
+
+    <h2 class="logo">
+        Fit<span>X</span>
+    </h2>
+
+</nav>
+
+
+<section class="dashboard-section">
+
+    <div class="dashboard-box">
+
+        <p class="small-title">
+            FITX MEMBERSHIP
+        </p>
+
+        <h1>
+            🎉 Payment Successful!
+        </h1>
+
+        <p class="dashboard-subtitle">
+            Your FitX membership is now active.
+        </p>
+
+
+        <div class="membership-details">
+
+            <h2>Membership Confirmation</h2>
+
+            <p>
+                <strong>Member:</strong>
+                <span id="memberName">--</span>
+            </p>
+
+            <p>
+                <strong>Plan:</strong>
+                <span id="confirmPlan">--</span>
+            </p>
+
+            <p>
+                <strong>Duration:</strong>
+                <span id="confirmDuration">--</span>
+            </p>
+
+            <p>
+                <strong>Amount Paid:</strong>
+                ₹<span id="confirmPrice">--</span>
+            </p>
+
+            <p>
+                <strong>Payment Method:</strong>
+                <span id="confirmPayment">--</span>
+            </p>
+
+            <p>
+                <strong>Payment ID:</strong>
+                <span id="confirmPaymentId">--</span>
+            </p>
+
+            <p>
+                <strong>Start Date:</strong>
+                <span id="confirmStartDate">--</span>
+            </p>
+
+            <p>
+                <strong>Expiry Date:</strong>
+                <span id="confirmExpiryDate">--</span>
+            </p>
+
+            <p>
+                <strong>Status:</strong>
+                <span id="confirmStatus">Active</span>
+            </p>
+
+        </div>
+
+
+        <button
+                class="choose-plan-btn"
+                onclick="window.print()">
+
+            🧾 Print Receipt
+
+        </button>
+
+
+        <br><br>
+
+
+        <button
+                class="change-btn"
+                onclick="window.location.href='dashboard.html'">
+
+            Go to Dashboard
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<script>
+
+    function formatDate(dateString) {
+
+        const date =
+            new Date(dateString);
+
+        return date.toLocaleDateString(
+            "en-IN",
+            {
+                day: "2-digit",
+                month: "short",
+                year: "numeric"
+            }
+        );
+    }
+
+
+    const name =
+        localStorage.getItem("fitxName") ||
+        "FitX Member";
+
+    const plan =
+        localStorage.getItem("fitxMembership");
+
+    const duration =
+        localStorage.getItem(
+            "fitxMembershipDuration"
+        );
+
+    const price =
+        parseInt(
+            localStorage.getItem(
+                "fitxMembershipPrice"
+            )
+        ) || 0;
+
+    const payment =
+        localStorage.getItem(
+            "fitxPaymentMethod"
+        );
+
+    const paymentId =
+        localStorage.getItem(
+            "fitxPaymentId"
+        );
+
+    const startDate =
+        localStorage.getItem(
+            "fitxMembershipStartDate"
+        );
+
+    const expiryDate =
+        localStorage.getItem(
+            "fitxMembershipExpiryDate"
+        );
+
+
+    document.getElementById(
+        "memberName"
+    ).textContent = name;
+
+
+    document.getElementById(
+        "confirmPlan"
+    ).textContent = plan;
+
+
+    document.getElementById(
+        "confirmDuration"
+    ).textContent =
+        duration + " Month" +
+        (parseInt(duration) > 1 ? "s" : "");
+
+
+    document.getElementById(
+        "confirmPrice"
+    ).textContent =
+        price.toLocaleString("en-IN");
+
+
+    document.getElementById(
+        "confirmPayment"
+    ).textContent =
+        payment;
+
+
+    document.getElementById(
+        "confirmPaymentId"
+    ).textContent =
+        paymentId;
+
+
+    document.getElementById(
+        "confirmStartDate"
+    ).textContent =
+        formatDate(startDate);
+
+
+    document.getElementById(
+        "confirmExpiryDate"
+    ).textContent =
+        formatDate(expiryDate);
+
+
+    document.getElementById(
+        "confirmStatus"
+    ).textContent =
+        "Active";
+
+</script>
+
+</body>
+
+</html>

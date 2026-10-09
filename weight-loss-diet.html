@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitX - Weight Loss Diet</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        .diet-page {
+            width: 90%;
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+        .diet-page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .diet-page-header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .diet-page-header h1 span {
+            color: #39ff14;
+        }
+
+        .diet-page-header p {
+            color: #bdbdbd;
+            font-size: 16px;
+        }
+
+        .diet-groups {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .diet-card {
+            background: #151515;
+            border: 1px solid #292929;
+            border-radius: 12px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .diet-card:hover {
+            transform: translateY(-5px);
+            border-color: #39ff14;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.15);
+        }
+
+        .diet-card h2 {
+            color: #39ff14;
+            margin-bottom: 20px;
+        }
+
+        .diet-card ul {
+            padding-left: 20px;
+            color: #bdbdbd;
+            line-height: 2;
+        }
+
+        .diet-guidelines {
+            margin-top: 50px;
+            background: #151515;
+            border: 1px solid #292929;
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .diet-guidelines h2 {
+            color: #39ff14;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .diet-guidelines ul {
+            color: #bdbdbd;
+            line-height: 2;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 40px auto;
+            padding: 10px 20px;
+            background: #39ff14;
+            color: #000;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .back-button:hover {
+            background: transparent;
+            color: #39ff14;
+            border: 1px solid #39ff14;
+        }
+
+        @media (max-width: 800px) {
+
+            .diet-groups {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+
+<nav>
+
+    <h2 class="logo">
+        Fit<span>X</span>
+    </h2>
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+        <a href="workouts.html">Workouts</a>
+        <a href="diet-plans.html">Diet Plans</a>
+        <a href="membership.html">Membership</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+    <a href="login.html">
+        <button class="login-btn">Login</button>
+    </a>
+
+</nav>
+
+
+<!-- Weight Loss Diet Page -->
+
+<section class="diet-page">
+
+    <div class="diet-page-header">
+
+        <h1>🥗 <span>Weight Loss Diet</span></h1>
+
+        <p>
+            Build healthy eating habits and support sustainable
+            weight management with nutritious foods.
+        </p>
+
+    </div>
+
+
+    <div class="diet-groups">
+
+
+        <!-- Breakfast -->
+
+        <div class="diet-card">
+
+            <h2>🌅 Breakfast</h2>
+
+            <ul>
+
+                <li>Oats with fruits</li>
+                <li>Vegetable upma</li>
+                <li>Idli with sambar</li>
+                <li>Vegetable omelette</li>
+                <li>Greek yogurt with fruit</li>
+                <li>Whole-grain dosa</li>
+                <li>Boiled eggs</li>
+                <li>Poha with vegetables</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Lunch -->
+
+        <div class="diet-card">
+
+            <h2>🍱 Lunch</h2>
+
+            <ul>
+
+                <li>Brown rice with vegetables</li>
+                <li>Dal with rice</li>
+                <li>Roti with vegetables</li>
+                <li>Grilled chicken</li>
+                <li>Fish with salad</li>
+                <li>Paneer with vegetables</li>
+                <li>Curd</li>
+                <li>Large vegetable salad</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Snacks -->
+
+        <div class="diet-card">
+
+            <h2>🍎 Healthy Snacks</h2>
+
+            <ul>
+
+                <li>Apple</li>
+                <li>Orange</li>
+                <li>Guava</li>
+                <li>Banana</li>
+                <li>Roasted peanuts</li>
+                <li>Roasted chana</li>
+                <li>Greek yogurt</li>
+                <li>Boiled eggs</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Dinner -->
+
+        <div class="diet-card">
+
+            <h2>🌙 Dinner</h2>
+
+            <ul>
+
+                <li>Vegetable soup</li>
+                <li>Roti with vegetables</li>
+                <li>Grilled chicken with salad</li>
+                <li>Fish with vegetables</li>
+                <li>Paneer with vegetables</li>
+                <li>Dal with vegetables</li>
+                <li>Egg omelette with salad</li>
+                <li>Light vegetable khichdi</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Protein -->
+
+        <div class="diet-card">
+
+            <h2>💪 Protein Sources</h2>
+
+            <ul>
+
+                <li>Eggs</li>
+                <li>Chicken</li>
+                <li>Fish</li>
+                <li>Paneer</li>
+                <li>Dal</li>
+                <li>Chickpeas</li>
+                <li>Greek yogurt</li>
+                <li>Soy products</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Drinks -->
+
+        <div class="diet-card">
+
+            <h2>💧 Healthy Drinks</h2>
+
+            <ul>
+
+                <li>Water</li>
+                <li>Lemon water without added sugar</li>
+                <li>Buttermilk</li>
+                <li>Unsweetened tea</li>
+                <li>Unsweetened coffee</li>
+                <li>Coconut water</li>
+                <li>Herbal tea</li>
+                <li>Plain milk</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- Diet Guidelines -->
+
+    <div class="diet-guidelines">
+
+        <h2>🥗 Weight Loss Diet Guidelines</h2>
+
+        <ul>
+
+            <li>
+                <strong>Balanced Meals:</strong>
+                Include protein, vegetables, whole grains
+                and healthy fats in your meals.
+            </li>
+
+            <li>
+                <strong>Portion Control:</strong>
+                Pay attention to portion sizes instead of
+                completely eliminating your favorite foods.
+            </li>
+
+            <li>
+                <strong>Protein:</strong>
+                Include a good protein source in your meals
+                to support muscle maintenance and fullness.
+            </li>
+
+            <li>
+                <strong>Fruits & Vegetables:</strong>
+                Include a variety of fruits and vegetables
+                throughout the day.
+            </li>
+
+            <li>
+                <strong>Hydration:</strong>
+                Drink enough water throughout the day and
+                limit sugary drinks.
+            </li>
+
+            <li>
+                <strong>Consistency:</strong>
+                Aim for a sustainable eating pattern rather
+                than extreme dieting.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <a href="diet-plans.html" class="back-button">
+        ← Back to Diet Plans
+    </a>
+
+</section>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <h2>Fit<span>X</span></h2>
+
+    <p>
+        Train Hard. Stay Strong. Live Better.
+    </p>
+
+    <p class="copyright">
+        ©️ 2026 FitX. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

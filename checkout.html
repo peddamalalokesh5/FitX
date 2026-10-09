@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0">
+
+    <title>FitX - Checkout</title>
+
+    <link
+            rel="stylesheet"
+            href="css/style.css">
+
+</head>
+
+<body>
+
+<nav>
+
+    <h2 class="logo">
+        Fit<span>X</span>
+    </h2>
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+
+        <a href="workouts.html">Workouts</a>
+
+        <a href="diet-plans.html">Diet Plans</a>
+
+        <a href="membership.html">Membership</a>
+
+    </div>
+
+</nav>
+
+
+<section class="dashboard-section">
+
+    <div class="dashboard-box">
+
+        <p class="small-title">
+            FITX CHECKOUT
+        </p>
+
+        <h1>
+            Complete Your Membership
+        </h1>
+
+        <div class="membership-details">
+
+            <h2>Order Summary</h2>
+
+            <p>
+                <strong>Plan:</strong>
+                <span id="checkoutPlan">--</span>
+            </p>
+
+            <p>
+                <strong>Duration:</strong>
+                <span id="checkoutDuration">--</span>
+            </p>
+
+            <p>
+                <strong>Total Amount:</strong>
+                ₹<span id="checkoutPrice">0</span>
+            </p>
+
+        </div>
+
+
+        <div class="membership-details">
+
+            <h2>Payment Method</h2>
+
+            <label>
+                <input
+                        type="radio"
+                        name="paymentMethod"
+                        value="UPI"
+                        checked>
+                UPI
+            </label>
+
+            <br><br>
+
+            <label>
+                <input
+                        type="radio"
+                        name="paymentMethod"
+                        value="Card">
+                Debit / Credit Card
+            </label>
+
+            <br><br>
+
+            <label>
+                <input
+                        type="radio"
+                        name="paymentMethod"
+                        value="Net Banking">
+                Net Banking
+            </label>
+
+            <br><br>
+
+            <button
+                    class="choose-plan-btn"
+                    onclick="completePayment()">
+
+                Pay ₹<span id="payButtonAmount">0</span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <h2>Fit<span>X</span></h2>
+
+    <p>
+        Train Hard. Stay Strong. Live Better.
+    </p>
+
+    <p class="copyright">
+        ©️ 2026 FitX. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script>
+
+    const plan =
+        localStorage.getItem("fitxMembership");
+
+    const duration =
+        localStorage.getItem("fitxMembershipDuration");
+
+    const price =
+        parseInt(
+            localStorage.getItem("fitxMembershipPrice")
+        ) || 0;
+
+
+    if (!plan || !duration || !price) {
+
+        alert(
+            "Please select a membership plan first."
+        );
+
+        window.location.href =
+            "membership.html";
+    }
+
+
+    document.getElementById(
+        "checkoutPlan"
+    ).textContent = plan;
+
+
+    document.getElementById(
+        "checkoutDuration"
+    ).textContent =
+        duration + " Month" +
+        (parseInt(duration) > 1 ? "s" : "");
+
+
+    document.getElementById(
+        "checkoutPrice"
+    ).textContent =
+        price.toLocaleString("en-IN");
+
+
+    document.getElementById(
+        "payButtonAmount"
+    ).textContent =
+        price.toLocaleString("en-IN");
+
+
+    function completePayment() {
+
+        const paymentMethod =
+            document.querySelector(
+                'input[name="paymentMethod"]:checked'
+            ).value;
+
+
+        localStorage.setItem(
+            "fitxPaymentMethod",
+            paymentMethod
+        );
+
+
+        const startDate =
+            new Date();
+
+
+        const expiryDate =
+            new Date();
+
+
+        expiryDate.setMonth(
+            expiryDate.getMonth() +
+            parseInt(duration)
+        );
+
+
+        localStorage.setItem(
+            "fitxMembershipStartDate",
+            startDate.toISOString()
+        );
+
+
+        localStorage.setItem(
+            "fitxMembershipExpiryDate",
+            expiryDate.toISOString()
+        );
+
+
+        localStorage.setItem(
+            "fitxMembershipStatus",
+            "Active"
+        );
+
+
+        const paymentId =
+            "FITX" +
+            Date.now();
+
+
+        localStorage.setItem(
+            "fitxPaymentId",
+            paymentId
+        );
+
+
+        window.location.href =
+            "membership-confirmation.html";
+
+    }
+
+</script>
+
+</body>
+
+</html>

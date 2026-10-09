@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitX - Muscle Building</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        .muscle-page {
+            width: 90%;
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+        .muscle-page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .muscle-page-header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .muscle-page-header h1 span {
+            color: #39ff14;
+        }
+
+        .muscle-page-header p {
+            color: #bdbdbd;
+            font-size: 16px;
+        }
+
+        .muscle-groups {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .muscle-group-card {
+            background: #151515;
+            border: 1px solid #292929;
+            border-radius: 12px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .muscle-group-card:hover {
+            transform: translateY(-5px);
+            border-color: #39ff14;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.15);
+        }
+
+        .muscle-group-card h2 {
+            color: #39ff14;
+            margin-bottom: 20px;
+        }
+
+        .muscle-group-card ul {
+            padding-left: 20px;
+            color: #bdbdbd;
+            line-height: 2;
+        }
+
+        .training-guidelines {
+            margin-top: 50px;
+            background: #151515;
+            border: 1px solid #292929;
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .training-guidelines h2 {
+            color: #39ff14;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .training-guidelines ul {
+            color: #bdbdbd;
+            line-height: 2;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 40px auto;
+            padding: 10px 20px;
+            background: #39ff14;
+            color: #000;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .back-button:hover {
+            background: transparent;
+            color: #39ff14;
+            border: 1px solid #39ff14;
+        }
+
+        @media (max-width: 800px) {
+
+            .muscle-groups {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+
+<nav>
+
+    <h2 class="logo">
+        Fit<span>X</span>
+    </h2>
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+        <a href="workouts.html">Workouts</a>
+        <a href="diet-plans.html">Diet Plans</a>
+        <a href="membership.html">Membership</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+    <a href="login.html">
+        <button class="login-btn">Login</button>
+    </a>
+
+</nav>
+
+
+<!-- Muscle Building Page -->
+
+<section class="muscle-page">
+
+    <div class="muscle-page-header">
+
+        <h1>💪 <span>Muscle Building</span></h1>
+
+        <p>
+            Train every major muscle group with structured
+            resistance exercises.
+        </p>
+
+    </div>
+
+
+    <!-- Muscle Groups -->
+
+    <div class="muscle-groups">
+
+
+        <!-- Chest -->
+
+        <div class="muscle-group-card">
+
+            <h2>🫀 Chest</h2>
+
+            <ul>
+
+                <li>Bench Press</li>
+                <li>Incline Bench Press</li>
+                <li>Decline Bench Press</li>
+                <li>Dumbbell Press</li>
+                <li>Incline Dumbbell Press</li>
+                <li>Dumbbell Fly</li>
+                <li>Cable Crossover</li>
+                <li>Push-Ups</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Shoulder -->
+
+        <div class="muscle-group-card">
+
+            <h2>🏋️ Shoulder</h2>
+
+            <ul>
+
+                <li>Overhead Shoulder Press</li>
+                <li>Dumbbell Shoulder Press</li>
+                <li>Arnold Press</li>
+                <li>Lateral Raises</li>
+                <li>Front Raises</li>
+                <li>Rear Delt Fly</li>
+                <li>Face Pulls</li>
+                <li>Upright Row</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Back -->
+
+        <div class="muscle-group-card">
+
+            <h2>🔙 Back</h2>
+
+            <ul>
+
+                <li>Deadlift</li>
+                <li>Lat Pulldown</li>
+                <li>Pull-Ups</li>
+                <li>Barbell Row</li>
+                <li>Dumbbell Row</li>
+                <li>Seated Cable Row</li>
+                <li>Chest Supported Row</li>
+                <li>Straight Arm Pulldown</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Legs -->
+
+        <div class="muscle-group-card">
+
+            <h2>🦵 Legs</h2>
+
+            <ul>
+
+                <li>Barbell Squat</li>
+                <li>Front Squat</li>
+                <li>Leg Press</li>
+                <li>Romanian Deadlift</li>
+                <li>Leg Extension</li>
+                <li>Leg Curl</li>
+                <li>Walking Lunges</li>
+                <li>Calf Raises</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Core -->
+
+        <div class="muscle-group-card">
+
+            <h2>🎯 Core</h2>
+
+            <ul>
+
+                <li>Crunches</li>
+                <li>Leg Raises</li>
+                <li>Hanging Leg Raises</li>
+                <li>Plank</li>
+                <li>Side Plank</li>
+                <li>Russian Twist</li>
+                <li>Bicycle Crunch</li>
+                <li>Mountain Climbers</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Triceps -->
+
+        <div class="muscle-group-card">
+
+            <h2>💪 Triceps</h2>
+
+            <ul>
+
+                <li>Close Grip Bench Press</li>
+                <li>Triceps Pushdown</li>
+                <li>Rope Pushdown</li>
+                <li>Overhead Triceps Extension</li>
+                <li>Dumbbell Triceps Extension</li>
+                <li>Skull Crushers</li>
+                <li>Bench Dips</li>
+                <li>Diamond Push-Ups</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Biceps -->
+
+        <div class="muscle-group-card">
+
+            <h2>💪 Biceps</h2>
+
+            <ul>
+
+                <li>Barbell Curl</li>
+                <li>Dumbbell Curl</li>
+                <li>Hammer Curl</li>
+                <li>Incline Dumbbell Curl</li>
+                <li>Preacher Curl</li>
+                <li>Concentration Curl</li>
+                <li>Cable Curl</li>
+                <li>Spider Curl</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- Training Guidelines -->
+
+    <div class="training-guidelines">
+
+        <h2>🏋️ Training & Recovery Guidelines</h2>
+
+        <ul>
+
+            <li>
+                <strong>Volume:</strong>
+                Perform 3 to 4 sets of 8 to 12 repetitions
+                per exercise for muscle growth.
+            </li>
+
+            <li>
+                <strong>Intensity:</strong>
+                Use a weight that makes the final repetitions
+                challenging while maintaining proper form.
+            </li>
+
+            <li>
+                <strong>Rest Between Sets:</strong>
+                Rest around 60 to 120 seconds between sets.
+            </li>
+
+            <li>
+                <strong>Recovery:</strong>
+                Allow 48 to 72 hours of recovery before training
+                the same muscle group again.
+            </li>
+
+            <li>
+                <strong>Progressive Overload:</strong>
+                Gradually increase the weight, repetitions,
+                or training difficulty as you become stronger.
+            </li>
+
+            <li>
+                <strong>Form:</strong>
+                Always prioritize correct exercise technique
+                over lifting heavier weights.
+            </li>
+
+        </ul>
+
+    </div>
+
+    <button class="back-button" onclick="completeMuscleWorkout()">
+        ✅ Mark Workout Complete
+    </button>
+    <a href="workouts.html" class="back-button">
+        ← Back to Workouts
+    </a>
+
+</section>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <h2>Fit<span>X</span></h2>
+
+    <p>
+        Train Hard. Stay Strong. Live Better.
+    </p>
+
+    <p class="copyright">
+        ©️ 2026 FitX. All Rights Reserved.
+    </p>
+
+</footer>
+
+<script>
+    // Login protection
+
+    if (localStorage.getItem("fitxLoggedIn") !== "true") {
+        alert("🔐 Please login or create an account to access this workout.");
+        window.location.href = "login.html";
+    }
+
+    function completeMuscleWorkout() {
+
+        // Make sure the 90-day cycle exists
+        let startDate =
+            localStorage.getItem("fitxWorkout90StartDate");
+
+        if (!startDate) {
+            const d = new Date();
+
+            startDate =
+                d.getFullYear() + "-" +
+                String(d.getMonth() + 1).padStart(2, "0") + "-" +
+                String(d.getDate()).padStart(2, "0");
+
+            localStorage.setItem(
+                "fitxWorkout90StartDate",
+                startDate
+            );
+
+            localStorage.setItem(
+                "fitxWorkout90Count",
+                "0"
+            );
+
+            localStorage.setItem(
+                "fitxWorkout90History",
+                JSON.stringify([])
+            );
+        }
+
+
+        // 90-day workout count
+        let totalCount =
+            parseInt(
+                localStorage.getItem("fitxWorkout90Count")
+            ) || 0;
+
+        totalCount++;
+
+        localStorage.setItem(
+            "fitxWorkout90Count",
+            totalCount
+        );
+
+
+        // Weekly workout count
+        let weeklyCount =
+            parseInt(
+                localStorage.getItem("fitxWorkoutWeeklyCount")
+            ) || 0;
+
+        weeklyCount++;
+
+        localStorage.setItem(
+            "fitxWorkoutWeeklyCount",
+            weeklyCount
+        );
+
+
+        // Save workout history
+        let history =
+            JSON.parse(
+                localStorage.getItem("fitxWorkout90History")
+            ) || [];
+
+
+        let today =
+            new Date().toLocaleDateString();
+
+
+        history.push({
+
+            workout: "Muscle Building",
+
+            date: today
+
+        });
+
+
+        localStorage.setItem(
+            "fitxWorkout90History",
+            JSON.stringify(history)
+        );
+
+
+        alert("Muscle Building workout completed! 💪");
+
+        window.location.href = "workouts.html";
+    }
+</script>
+</body>
+
+</html>

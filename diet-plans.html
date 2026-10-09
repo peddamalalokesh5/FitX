@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitX - Diet Plans</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav>
+    <h2 class="logo">
+        Fit<span>X</span>
+    </h2>
+
+    <div class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="./workouts.html">Workouts</a>
+        <a href="./diet-plans.html">Diet Plans</a>
+        <a href="./membership.html">Membership</a>
+        <a href="./about.html">About</a>
+        <a href="./contact.html">Contact</a>
+    </div>
+
+    <a href="./login.html">
+        <button class="login-btn">Login</button>
+    </a>
+</nav>
+
+
+<!-- Page Header -->
+<section class="page-header">
+
+    <p class="small-title">FITX NUTRITION</p>
+
+    <h1>
+        Fuel Your <span>Body</span>
+    </h1>
+
+    <p>
+        Choose a nutrition plan that matches your
+        fitness goal and lifestyle.
+    </p>
+
+</section>
+
+
+<!-- Diet Plans -->
+<section class="diet-plans">
+
+    <div class="diet-card">
+
+        <div class="diet-icon">🔥</div>
+
+        <h2>Weight Loss</h2>
+
+        <p>
+            A balanced calorie-controlled plan designed
+            to help you lose body fat while maintaining
+            your energy.
+        </p>
+
+        <ul>
+            <li>High-protein meals</li>
+            <li>Balanced carbohydrates</li>
+            <li>Healthy fats</li>
+            <li>Low-calorie options</li>
+        </ul>
+
+        <a href="weight-loss-diet.html">
+            <button>View Plan</button>
+        </a>
+
+    </div>
+
+
+    <div class="diet-card featured">
+
+        <div class="popular">POPULAR</div>
+
+        <div class="diet-icon">💪</div>
+
+        <h2>Muscle Gain</h2>
+
+        <p>
+            A high-protein nutrition plan designed to
+            support muscle growth and strength.
+        </p>
+
+        <ul>
+            <li>High-protein meals</li>
+            <li>Calorie surplus</li>
+            <li>Protein-rich snacks</li>
+            <li>Post-workout nutrition</li>
+        </ul>
+
+        <a href="muscle-gain-diet.html">
+            <button>View Plan</button>
+        </a>
+
+    </div>
+
+
+    <div class="diet-card">
+
+        <div class="diet-icon">⚡</div>
+
+        <h2>Healthy Lifestyle</h2>
+
+        <p>
+            A simple balanced diet for people who want
+            to stay fit, healthy and energetic.
+        </p>
+
+        <ul>
+            <li>Balanced meals</li>
+            <li>Fresh fruits & vegetables</li>
+            <li>Healthy snacks</li>
+            <li>Proper hydration</li>
+        </ul>
+
+        <a href="healthy-lifestyle-diet.html">
+            <button>View Plan</button>
+        </a>
+
+    </div>
+
+</section>
+<!-- Diet Progress -->
+<section class="diet-progress">
+
+    <h2>🥗 Diet Progress</h2>
+
+    <p>
+        Meals Completed:
+        <strong id="mealCount">0</strong>
+    </p>
+
+    <button onclick="completeMeal()">
+        ✅ Mark Meal Completed
+    </button>
+
+</section>
+<!-- Water Intake -->
+<section class="diet-progress">
+
+    <h2>💧 Water Intake</h2>
+
+    <p>
+        Water:
+        <strong id="waterCount">0</strong> / 8 glasses
+    </p>
+
+    <div class="progress-bar">
+        <div id="waterProgressFill"></div>
+    </div>
+
+    <button onclick="addWater()">
+        💧 Add Water
+    </button>
+
+</section>
+<!-- Calories Intake -->
+<!-- Calories Intake -->
+<section class="diet-progress">
+
+    <h2>🔥 Calories Intake</h2>
+
+    <p>
+        Daily Calorie Target:
+        <strong id="calorieTarget">Not Set</strong> kcal
+    </p>
+
+    <input
+            type="number"
+            id="calorieTargetInput"
+            placeholder="Enter daily target"
+            min="1"
+    >
+
+    <button onclick="saveCalorieTarget()">
+        🎯 Set Target
+    </button>
+
+    <p>
+        Consumed:
+        <strong id="calorieCount">0</strong> kcal
+    </p>
+
+    <div class="progress-bar">
+        <div id="calorieProgressFill"></div>
+    </div>
+
+    <input
+            type="number"
+            id="calorieInput"
+            placeholder="Enter calories"
+            min="1"
+    >
+
+    <button onclick="addCalories()">
+        ➕ Add Calories
+    </button>
+
+</section>
+<!-- Protein Intake -->
+<section class="diet-progress">
+
+    <h2>💪 Protein Intake</h2>
+
+    <p>
+        Daily Protein Target:
+        <strong id="proteinTarget">Not Set</strong> g
+    </p>
+
+    <input
+            type="number"
+            id="proteinTargetInput"
+            placeholder="Enter daily target (g)"
+            min="1"
+    >
+
+    <button onclick="saveProteinTarget()">
+        🎯 Set Target
+    </button>
+
+    <p>
+        Consumed:
+        <strong id="proteinCount">0</strong> g
+    </p>
+
+    <div class="progress-bar">
+        <div id="proteinProgressFill"></div>
+    </div>
+
+    <input
+            type="number"
+            id="proteinInput"
+            placeholder="Enter protein (g)"
+            min="1"
+    >
+
+    <button onclick="addProtein()">
+        ➕ Add Protein
+    </button>
+
+</section>
+
+<!-- 30-Day Progress -->
+<section class="diet-progress">
+
+    <h2>📊 30-Day Progress</h2>
+
+    <p>
+        Day:
+        <strong id="dietDay">1</strong> / 30
+    </p>
+
+    <p>
+        Diet Progress:
+        <strong id="dietCompletedDays">0</strong> / 30 Days
+    </p>
+
+    <p>
+        💧 Water Goals:
+        <strong id="waterCompletedDays">0</strong> / 30 Days
+    </p>
+
+    <p>
+        🔥 Calorie Goals:
+        <strong id="calorieCompletedDays">0</strong> / 30 Days
+    </p>
+
+    <p>
+        💪 Protein Goals:
+        <strong id="proteinCompletedDays">0</strong> / 30 Days
+    </p>
+
+    <p>
+        30-Day Water Target:
+        <strong id="water30Target">240</strong> glasses
+    </p>
+
+    <p>
+        30-Day Calorie Target:
+        <strong id="calorie30Target">Not Set</strong>
+    </p>
+
+    <p>
+        30-Day Protein Target:
+        <strong id="protein30Target">Not Set</strong>
+    </p>
+
+    <div id="dietHistoryList">
+        <p>No progress recorded yet.</p>
+    </div>
+
+</section>
+
+<!-- Footer -->
+<footer>
+
+    <h2>Fit<span>X</span></h2>
+
+    <p>
+        Train Hard. Stay Strong. Live Better.
+    </p>
+
+    <p class="copyright">
+        © 2026 FitX. All Rights Reserved.
+    </p>
+
+</footer>
+<script>
+
+    // Login protection
+    if (localStorage.getItem("fitxLoggedIn") !== "true") {
+        alert("🔐 Please login or create an account to access FitX Diet Plans.");
+        window.location.href = "login.html";
+    }
+
+    function getToday() {
+        return new Date().toISOString().split("T")[0];
+    }
+
+
+    /* =========================
+       30-DAY CYCLE
+    ========================= */
+
+    function start30DayCycle() {
+
+        let startDate = localStorage.getItem("fitx30StartDate");
+
+        if (!startDate) {
+            localStorage.setItem("fitx30StartDate", getToday());
+            startDate = getToday();
+        }
+
+        let start = new Date(startDate);
+        let today = new Date(getToday());
+
+        let difference =
+            Math.floor((today - start) / (1000 * 60 * 60 * 24));
+
+        // Start a new cycle after 30 days
+
+        if (difference >= 30) {
+
+            localStorage.removeItem("fitxDietHistory");
+
+            localStorage.setItem(
+                "fitx30StartDate",
+                getToday()
+            );
+
+            localStorage.setItem("fitxWaterCount", "0");
+            localStorage.setItem("fitxCalorieCount", "0");
+            localStorage.setItem("fitxProteinCount", "0");
+        }
+    }
+
+
+    /* =========================
+       DAILY RESET
+    ========================= */
+
+    function loadDailyData() {
+
+        let today = getToday();
+
+        let savedDate =
+            localStorage.getItem("fitxDietDate");
+
+        if (savedDate !== today) {
+
+            if (savedDate) {
+                saveTodayToHistory(savedDate);
+            }
+
+            localStorage.setItem(
+                "fitxDietDate",
+                today
+            );
+
+            localStorage.setItem(
+                "fitxWaterCount",
+                "0"
+            );
+
+            localStorage.setItem(
+                "fitxCalorieCount",
+                "0"
+            );
+
+            localStorage.setItem(
+                "fitxProteinCount",
+                "0"
+            );
+
+            localStorage.setItem(
+                "fitxMealCount",
+                "0"
+            );
+        }
+    }
+
+
+    /* =========================
+       SAVE DAILY HISTORY
+    ========================= */
+
+    function saveTodayToHistory(date) {
+
+        let history =
+            JSON.parse(
+                localStorage.getItem("fitxDietHistory")
+            ) || [];
+
+        let water =
+            parseInt(
+                localStorage.getItem("fitxWaterCount")
+            ) || 0;
+
+        let calories =
+            parseInt(
+                localStorage.getItem("fitxCalorieCount")
+            ) || 0;
+
+        let protein =
+            parseInt(
+                localStorage.getItem("fitxProteinCount")
+            ) || 0;
+
+        let calorieTarget =
+            parseInt(
+                localStorage.getItem("fitxCalorieTarget")
+            ) || 0;
+
+        let proteinTarget =
+            parseInt(
+                localStorage.getItem("fitxProteinTarget")
+            ) || 0;
+
+        let existing =
+            history.findIndex(function(item) {
+                return item.date === date;
+            });
+
+        let dayData = {
+            date: date,
+            water: water,
+            waterTarget: 8,
+            calories: calories,
+            calorieTarget: calorieTarget,
+            protein: protein,
+            proteinTarget: proteinTarget
+        };
+
+        if (existing >= 0) {
+            history[existing] = dayData;
+        } else {
+            history.push(dayData);
+        }
+
+        if (history.length > 30) {
+            history = history.slice(-30);
+        }
+        localStorage.setItem(
+            "fitxDietHistory",
+            JSON.stringify(history)
+        );
+    }
+
+
+    /* =========================
+       MEALS
+    ========================= */
+
+    function updateMealCount() {
+
+        let count =
+            parseInt(
+                localStorage.getItem("fitxMealCount")
+            ) || 0;
+
+        document.getElementById("mealCount").textContent =
+            count;
+    }
+
+
+    function completeMeal() {
+
+        let count =
+            parseInt(
+                localStorage.getItem("fitxMealCount")
+            ) || 0;
+
+        count++;
+
+        localStorage.setItem(
+            "fitxMealCount",
+            count
+        );
+
+        updateMealCount();
+
+        alert("Meal completed! 🥗");
+    }
+
+
+    /* =========================
+       WATER
+    ========================= */
+
+    function addWater() {
+
+        let water =
+            parseInt(
+                localStorage.getItem("fitxWaterCount")
+            ) || 0;
+
+        if (water >= 8) {
+            alert("Daily water target completed! 💧");
+            return;
+        }
+
+        water++;
+
+        localStorage.setItem(
+            "fitxWaterCount",
+            water
+        );
+
+        updateWater();
+        update30DayProgress();
+    }
+
+
+    function updateWater() {
+
+        let water =
+            parseInt(
+                localStorage.getItem("fitxWaterCount")
+            ) || 0;
+
+        document.getElementById("waterCount").textContent =
+            water;
+
+        let percentage =
+            (water / 8) * 100;
+
+        document.getElementById(
+            "waterProgressFill"
+        ).style.width =
+            percentage + "%";
+    }
+
+
+    /* =========================
+       CALORIE TARGET
+    ========================= */
+
+    function saveCalorieTarget() {
+
+        let target =
+            parseInt(
+                document.getElementById(
+                    "calorieTargetInput"
+                ).value
+            );
+
+        if (!target || target <= 0) {
+            alert("Please enter a valid calorie target.");
+            return;
+        }
+
+        localStorage.setItem(
+            "fitxCalorieTarget",
+            target
+        );
+
+        updateCalories();
+        update30DayProgress();
+
+        document.getElementById(
+            "calorieTargetInput"
+        ).value = "";
+
+        alert("Daily calorie target saved! 🎯");
+    }
+
+
+    /* =========================
+       CALORIES
+    ========================= */
+
+    function addCalories() {
+
+        let calories =
+            parseInt(
+                document.getElementById(
+                    "calorieInput"
+                ).value
+            );
+
+        if (!calories || calories <= 0) {
+            alert("Please enter a valid calorie amount.");
+            return;
+        }
+
+        let total =
+            parseInt(
+                localStorage.getItem(
+                    "fitxCalorieCount"
+                )
+            ) || 0;
+
+        total += calories;
+
+        localStorage.setItem(
+            "fitxCalorieCount",
+            total
+        );
+
+        updateCalories();
+        update30DayProgress();
+
+        document.getElementById(
+            "calorieInput"
+        ).value = "";
+    }
+
+
+    function updateCalories() {
+
+        let target =
+            parseInt(
+                localStorage.getItem(
+                    "fitxCalorieTarget"
+                )
+            ) || 0;
+
+        let total =
+            parseInt(
+                localStorage.getItem(
+                    "fitxCalorieCount"
+                )
+            ) || 0;
+
+        document.getElementById(
+            "calorieCount"
+        ).textContent =
+            total;
+
+        if (target === 0) {
+
+            document.getElementById(
+                "calorieTarget"
+            ).textContent =
+                "Not Set";
+
+            document.getElementById(
+                "calorieProgressFill"
+            ).style.width =
+                "0%";
+
+            return;
+        }
+
+        document.getElementById(
+            "calorieTarget"
+        ).textContent =
+            target;
+
+        let percentage =
+            (total / target) * 100;
+
+        if (percentage > 100) {
+            percentage = 100;
+        }
+
+        document.getElementById(
+            "calorieProgressFill"
+        ).style.width =
+            percentage + "%";
+    }
+
+
+    /* =========================
+       PROTEIN
+    ========================= */
+
+    function saveProteinTarget() {
+
+        let target =
+            parseInt(
+                document.getElementById(
+                    "proteinTargetInput"
+                ).value
+            );
+
+        if (!target || target <= 0) {
+            alert("Please enter a valid protein target.");
+            return;
+        }
+
+        localStorage.setItem(
+            "fitxProteinTarget",
+            target
+        );
+
+        updateProtein();
+        update30DayProgress();
+
+        document.getElementById(
+            "proteinTargetInput"
+        ).value = "";
+
+        alert("Daily protein target saved! 💪");
+    }
+
+
+    function addProtein() {
+
+        let protein =
+            parseInt(
+                document.getElementById(
+                    "proteinInput"
+                ).value
+            );
+
+        if (!protein || protein <= 0) {
+            alert("Please enter a valid protein amount.");
+            return;
+        }
+
+        let total =
+            parseInt(
+                localStorage.getItem(
+                    "fitxProteinCount"
+                )
+            ) || 0;
+
+        total += protein;
+
+        localStorage.setItem(
+            "fitxProteinCount",
+            total
+        );
+
+        updateProtein();
+        update30DayProgress();
+
+        document.getElementById(
+            "proteinInput"
+        ).value = "";
+    }
+
+
+    function updateProtein() {
+
+        let target =
+            parseInt(
+                localStorage.getItem(
+                    "fitxProteinTarget"
+                )
+            ) || 0;
+
+        let total =
+            parseInt(
+                localStorage.getItem(
+                    "fitxProteinCount"
+                )
+            ) || 0;
+
+        document.getElementById(
+            "proteinCount"
+        ).textContent =
+            total;
+
+        if (target === 0) {
+
+            document.getElementById(
+                "proteinTarget"
+            ).textContent =
+                "Not Set";
+
+            document.getElementById(
+                "proteinProgressFill"
+            ).style.width =
+                "0%";
+
+            return;
+        }
+
+        document.getElementById(
+            "proteinTarget"
+        ).textContent =
+            target;
+
+        let percentage =
+            (total / target) * 100;
+
+        if (percentage > 100) {
+            percentage = 100;
+        }
+
+        document.getElementById(
+            "proteinProgressFill"
+        ).style.width =
+            percentage + "%";
+    }
+
+
+    /* =========================
+       30-DAY PROGRESS
+    ========================= */
+
+    function update30DayProgress() {
+
+        let startDate =
+            localStorage.getItem(
+                "fitx30StartDate"
+            );
+
+        if (!startDate) {
+            startDate = getToday();
+
+            localStorage.setItem(
+                "fitx30StartDate",
+                startDate
+            );
+        }
+
+        let start =
+            new Date(startDate);
+
+        let today =
+            new Date(getToday());
+
+        let difference =
+            Math.floor(
+                (today - start) /
+                (1000 * 60 * 60 * 24)
+            );
+
+        let dayNumber =
+            difference + 1;
+
+        if (dayNumber > 30) {
+            dayNumber = 30;
+        }
+
+        document.getElementById(
+            "dietDay"
+        ).textContent =
+            dayNumber;
+
+
+        /* 30-DAY WATER TARGET */
+
+        document.getElementById(
+            "water30Target"
+        ).textContent =
+            "240";
+
+
+        /* 30-DAY CALORIE TARGET */
+
+        let calorieTarget =
+            parseInt(
+                localStorage.getItem(
+                    "fitxCalorieTarget"
+                )
+            ) || 0;
+
+        document.getElementById(
+            "calorie30Target"
+        ).textContent =
+            calorieTarget > 0
+                ? (calorieTarget * 30) + " kcal"
+                : "Not Set";
+
+
+        /* 30-DAY PROTEIN TARGET */
+
+        let proteinTarget =
+            parseInt(
+                localStorage.getItem(
+                    "fitxProteinTarget"
+                )
+            ) || 0;
+
+        document.getElementById(
+            "protein30Target"
+        ).textContent =
+            proteinTarget > 0
+                ? (proteinTarget * 30) + " g"
+                : "Not Set";
+
+
+        /* HISTORY */
+
+        let history =
+            JSON.parse(
+                localStorage.getItem(
+                    "fitxDietHistory"
+                )
+            ) || [];
+
+
+        let todayData = {
+            date: getToday(),
+            water:
+                parseInt(
+                    localStorage.getItem(
+                        "fitxWaterCount"
+                    )
+                ) || 0,
+            waterTarget: 8,
+            calories:
+                parseInt(
+                    localStorage.getItem(
+                        "fitxCalorieCount"
+                    )
+                ) || 0,
+            calorieTarget: calorieTarget,
+            protein:
+                parseInt(
+                    localStorage.getItem(
+                        "fitxProteinCount"
+                    )
+                ) || 0,
+            proteinTarget: proteinTarget
+        };
+
+
+        let todayIndex =
+            history.findIndex(function(item) {
+                return item.date === getToday();
+            });
+
+        if (todayIndex >= 0) {
+            history[todayIndex] = todayData;
+        } else {
+            history.push(todayData);
+        }
+
+
+        if (history.length > 30) {
+            history = history.slice(-30);
+        }
+
+
+        localStorage.setItem(
+            "fitxDietHistory",
+            JSON.stringify(history)
+        );
+        let completedDays = 0;
+        let waterCompletedDays = 0;
+        let calorieCompletedDays = 0;
+        let proteinCompletedDays = 0;
+
+        history.forEach(function(item) {
+
+            const waterCompleted =
+                item.water >= item.waterTarget;
+
+            const calorieCompleted =
+                item.calorieTarget > 0 &&
+                item.calories >= item.calorieTarget;
+
+            const proteinCompleted =
+                item.proteinTarget > 0 &&
+                item.protein >= item.proteinTarget;
+
+            if (waterCompleted) {
+                waterCompletedDays++;
+            }
+
+            if (calorieCompleted) {
+                calorieCompletedDays++;
+            }
+
+            if (proteinCompleted) {
+                proteinCompletedDays++;
+            }
+
+            if (
+                waterCompleted &&
+                calorieCompleted &&
+                proteinCompleted
+            ) {
+                completedDays++;
+            }
+        });
+
+        document.getElementById(
+            "dietCompletedDays"
+        ).textContent = completedDays;
+
+        document.getElementById(
+            "waterCompletedDays"
+        ).textContent = waterCompletedDays;
+
+        document.getElementById(
+            "calorieCompletedDays"
+        ).textContent = calorieCompletedDays;
+
+        document.getElementById(
+            "proteinCompletedDays"
+        ).textContent = proteinCompletedDays;
+
+
+        let historyList =
+            document.getElementById(
+                "dietHistoryList"
+            );
+
+        if (history.length === 0) {
+
+            historyList.innerHTML =
+                "<p>No progress recorded yet.</p>";
+
+            return;
+        }
+
+
+        historyList.innerHTML = "";
+
+
+        history.slice().reverse().forEach(
+            function(item) {
+
+                const waterCompleted =
+                    item.water >= item.waterTarget;
+
+                const calorieCompleted =
+                    item.calorieTarget > 0 &&
+                    item.calories >= item.calorieTarget;
+
+                const proteinCompleted =
+                    item.proteinTarget > 0 &&
+                    item.protein >= item.proteinTarget;
+
+                const dayCompleted =
+                    waterCompleted &&
+                    calorieCompleted &&
+                    proteinCompleted;
+
+                historyList.innerHTML += `
+
+        <div class="history-item">
+
+            <strong>
+                📅 ${item.date}
+            </strong>
+
+            <p>
+                💧 Water:
+                ${waterCompleted ? "✅" : "❌"}
+                ${item.water} / ${item.waterTarget}
+            </p>
+
+            <p>
+                🔥 Calories:
+                ${calorieCompleted ? "✅" : "❌"}
+                ${item.calories} / ${item.calorieTarget || "—"}
+            </p>
+
+            <p>
+                💪 Protein:
+                ${proteinCompleted ? "✅" : "❌"}
+                ${item.protein} / ${item.proteinTarget || "—"} g
+            </p>
+
+            <p>
+                <strong>
+                    ${dayCompleted
+                    ? "🎉 Day Completed"
+                    : "⏳ Day Not Completed"}
+                </strong>
+            </p>
+
+        </div>
+
+        `;
+            }
+        );
+    }
+
+
+    /* =========================
+       START
+    ========================= */
+
+    start30DayCycle();
+
+    loadDailyData();
+
+    updateMealCount();
+    updateWater();
+    updateCalories();
+    updateProtein();
+    update30DayProgress();
+
+</script>
+</body>
+</html>

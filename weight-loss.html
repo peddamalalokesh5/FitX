@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitX - Weight Loss</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        .weight-page {
+            width: 90%;
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+        .weight-page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .weight-page-header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .weight-page-header h1 span {
+            color: #39ff14;
+        }
+
+        .weight-page-header p {
+            color: #bdbdbd;
+            font-size: 16px;
+        }
+
+        .weight-groups {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .weight-group-card {
+            background: #151515;
+            border: 1px solid #292929;
+            border-radius: 12px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .weight-group-card:hover {
+            transform: translateY(-5px);
+            border-color: #39ff14;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.15);
+        }
+
+        .weight-group-card h2 {
+            color: #39ff14;
+            margin-bottom: 20px;
+        }
+
+        .weight-group-card ul {
+            padding-left: 20px;
+            color: #bdbdbd;
+            line-height: 2;
+        }
+
+        .training-guidelines {
+            margin-top: 50px;
+            background: #151515;
+            border: 1px solid #292929;
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .training-guidelines h2 {
+            color: #39ff14;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .training-guidelines ul {
+            color: #bdbdbd;
+            line-height: 2;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 40px auto;
+            padding: 10px 20px;
+            background: #39ff14;
+            color: #000;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .back-button:hover {
+            background: transparent;
+            color: #39ff14;
+            border: 1px solid #39ff14;
+        }
+
+        @media (max-width: 800px) {
+
+            .weight-groups {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+
+<nav>
+
+    <h2 class="logo">
+        Fit<span>X</span>
+    </h2>
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+        <a href="workouts.html">Workouts</a>
+        <a href="diet-plans.html">Diet Plans</a>
+        <a href="membership.html">Membership</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+    <a href="login.html">
+        <button class="login-btn">Login</button>
+    </a>
+
+</nav>
+
+
+<!-- Weight Loss Page -->
+
+<section class="weight-page">
+
+    <div class="weight-page-header">
+
+        <h1>🔥 <span>Weight Loss</span></h1>
+
+        <p>
+            Burn calories, improve your fitness and build
+            a healthier and stronger body.
+        </p>
+
+    </div>
+
+
+    <!-- Workout Categories -->
+
+    <div class="weight-groups">
+
+
+        <!-- Cardio -->
+
+        <div class="weight-group-card">
+
+            <h2>🏃 Cardio</h2>
+
+            <ul>
+
+                <li>Brisk Walking</li>
+                <li>Running</li>
+                <li>Cycling</li>
+                <li>Jump Rope</li>
+                <li>Stair Climbing</li>
+                <li>Jogging</li>
+                <li>Swimming</li>
+                <li>Rowing</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- HIIT -->
+
+        <div class="weight-group-card">
+
+            <h2>🔥 HIIT</h2>
+
+            <ul>
+
+                <li>Jumping Jacks</li>
+                <li>Burpees</li>
+                <li>Mountain Climbers</li>
+                <li>High Knees</li>
+                <li>Jump Squats</li>
+                <li>Skater Jumps</li>
+                <li>Fast Feet</li>
+                <li>Squat Jumps</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Full Body -->
+
+        <div class="weight-group-card">
+
+            <h2>💪 Full Body</h2>
+
+            <ul>
+
+                <li>Bodyweight Squats</li>
+                <li>Push-Ups</li>
+                <li>Lunges</li>
+                <li>Plank</li>
+                <li>Bodyweight Rows</li>
+                <li>Glute Bridges</li>
+                <li>Step-Ups</li>
+                <li>Bear Crawls</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Core -->
+
+        <div class="weight-group-card">
+
+            <h2>🎯 Core</h2>
+
+            <ul>
+
+                <li>Crunches</li>
+                <li>Leg Raises</li>
+                <li>Plank</li>
+                <li>Side Plank</li>
+                <li>Bicycle Crunches</li>
+                <li>Russian Twists</li>
+                <li>Mountain Climbers</li>
+                <li>Dead Bug</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Strength -->
+
+        <div class="weight-group-card">
+
+            <h2>🏋️ Strength</h2>
+
+            <ul>
+
+                <li>Squats</li>
+                <li>Deadlifts</li>
+                <li>Bench Press</li>
+                <li>Lat Pulldown</li>
+                <li>Dumbbell Press</li>
+                <li>Rows</li>
+                <li>Shoulder Press</li>
+                <li>Leg Press</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Recovery -->
+
+        <div class="weight-group-card">
+
+            <h2>🧘 Recovery</h2>
+
+            <ul>
+
+                <li>Walking</li>
+                <li>Light Stretching</li>
+                <li>Mobility Exercises</li>
+                <li>Foam Rolling</li>
+                <li>Breathing Exercises</li>
+                <li>Light Cycling</li>
+                <li>Yoga</li>
+                <li>Rest Day</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- Training Guidelines -->
+
+    <div class="training-guidelines">
+
+        <h2>🔥 Weight Loss Training Guidelines</h2>
+
+        <ul>
+
+            <li>
+                <strong>Cardio:</strong>
+                Perform around 20 to 40 minutes of moderate
+                cardio depending on your fitness level.
+            </li>
+
+            <li>
+                <strong>HIIT:</strong>
+                Start with short intervals and gradually
+                increase intensity as your fitness improves.
+            </li>
+
+            <li>
+                <strong>Strength Training:</strong>
+                Include strength exercises regularly to
+                maintain muscle while losing body fat.
+            </li>
+
+            <li>
+                <strong>Daily Activity:</strong>
+                Stay active throughout the day by walking,
+                using stairs and reducing long periods of sitting.
+            </li>
+
+            <li>
+                <strong>Nutrition:</strong>
+                Weight loss generally requires a sustainable
+                calorie deficit along with adequate protein
+                and nutritious foods.
+            </li>
+
+            <li>
+                <strong>Recovery:</strong>
+                Get enough sleep and allow your body to recover
+                between harder training sessions.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <a href="workouts.html" class="back-button">
+        ← Back to Workouts
+    </a>
+    <button class="back-button" onclick="completeWorkoutPage('Weight Loss')">
+        ✅ Mark Workout Complete
+    </button>
+
+</section>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <h2>Fit<span>X</span></h2>
+
+    <p>
+        Train Hard. Stay Strong. Live Better.
+    </p>
+
+    <p class="copyright">
+        ©️ 2026 FitX. All Rights Reserved.
+    </p>
+
+</footer>
+
+<script>
+
+    // Login protection
+    if (localStorage.getItem("fitxLoggedIn") !== "true") {
+        alert("🔐 Please login or create an account to access this workout.");
+        window.location.href = "login.html";
+    }
+
+    function completeWorkoutPage(workoutName) {
+
+        // 90-day cycle
+        let startDate =
+            localStorage.getItem("fitxWorkout90StartDate");
+
+        if (!startDate) {
+
+            const d = new Date();
+
+            startDate =
+                d.getFullYear() + "-" +
+                String(d.getMonth() + 1).padStart(2, "0") + "-" +
+                String(d.getDate()).padStart(2, "0");
+
+            localStorage.setItem(
+                "fitxWorkout90StartDate",
+                startDate
+            );
+
+            localStorage.setItem(
+                "fitxWorkout90Count",
+                "0"
+            );
+
+            localStorage.setItem(
+                "fitxWorkout90History",
+                JSON.stringify([])
+            );
+        }
+
+
+        // 90-day total
+        let totalCount =
+            parseInt(
+                localStorage.getItem("fitxWorkout90Count")
+            ) || 0;
+
+        totalCount++;
+
+        localStorage.setItem(
+            "fitxWorkout90Count",
+            totalCount
+        );
+
+
+        // Weekly total
+        let weeklyCount =
+            parseInt(
+                localStorage.getItem("fitxWorkoutWeeklyCount")
+            ) || 0;
+
+        weeklyCount++;
+
+        localStorage.setItem(
+            "fitxWorkoutWeeklyCount",
+            weeklyCount
+        );
+
+
+        // Workout history
+        let history =
+            JSON.parse(
+                localStorage.getItem("fitxWorkout90History")
+            ) || [];
+
+
+        let today =
+            new Date().toLocaleDateString();
+
+
+        history.push({
+
+            workout: workoutName,
+
+            date: today
+
+        });
+
+
+        localStorage.setItem(
+            "fitxWorkout90History",
+            JSON.stringify(history)
+        );
+
+
+        alert(
+            workoutName +
+            " workout completed! 💪"
+        );
+
+
+        window.location.href =
+            "workouts.html";
+    }
+
+</script>
+</body>
+
+</html>
